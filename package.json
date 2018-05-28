@@ -1,0 +1,40 @@
+{
+  "name": "new-gen-zentala",
+  "name": "new-gen-zentala",
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "contributors": [
+    {
+      "name": "Paweł Żentała",
+      "email": "zentala@gmail.com",
+      "url": "https://github.com/zentala"
+    }
+  ],
+  "scripts": {
+    "start": "node server/index",
+    "dev": "node ./node_modules/parcel-bundler/bin/cli.js front/src/index.html -p 2000 -d front/dist/",
+    "build": "node ./node_modules/parcel-bundler/bin/cli.js build front/src/index.html -d front/dist/"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.1.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jquery": "1.9.1 - 3",
+    "node-sass": "^4.9.0",
+    "underscore": "^1.9.0"
+  },
+  "engines": {
+    "node": ">= 8.9.4",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.3.2"
+  },
+  "devDependencies": {
+    "foreman": "^2.0.0",
+    "parcel-bundler": "^1.8.1"
+  }
+}
