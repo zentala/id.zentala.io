@@ -1,0 +1,116 @@
+@keyframes onClick {
+  0% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.social-media {
+  white-space:nowrap;
+
+  li {
+    margin-right: .2rem;
+    display: block;
+    transition: all ease-in 0.3s;
+
+    i { position: relative; }
+
+    &:hover {
+      transform: scale(1.15);
+      transition: all ease-in 0.1s;
+    }
+
+    &:active,
+    &:hover:active {
+      transform: scale(.8);
+      transition: transform 0.1s;
+    }
+  }
+
+  a {
+    font-size: map-get($social-media, font-size);
+    color: rgba(map-get($social-media, default-color), 0.7);
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      //transform: scale(1.2);
+    }
+  }
+
+  // todo animations after hover and maybe abimation (blysk) after click
+
+  &__facebook {
+    i { transform: scale(.83); position: relative; left: -4%; bottom: -2%; }
+    a:hover { color: #3b5998;}
+  }
+
+  &__linkedin {
+    i { transform: scale(.9); }
+    a:hover { color: #007bb5;}
+  }
+
+  &__youtube {
+    i { transform: scale(.85); }
+    a:hover { color: #ff0000;}
+  }
+
+  &__whatsapp {
+    a:hover { color: #4dc247;}
+  }
+
+  &__pinterest {
+    a:hover { color: #cb2027;}
+  }
+
+  &__snapchat {
+    a:hover { color: #fffc00; color: #222; }
+  }
+
+  &__github {
+    i { transform: scale(.95); }
+    //a:hover { color: #24292e;}
+    a:hover { color: #fff;}
+  }
+
+  &__stackoverflow {
+    i { transform: scale(.8); }
+    //a:hover { color: #f48024; color: #222426; } // #bcbbbb
+    a:hover { color: #f48024;} // #bcbbbb
+  }
+
+  &__skype {
+    i { transform: scale(.92); }
+    a:hover { color: #00aff0;} // #222426
+  }
+
+  &__weixin {
+    i { transform: scale(.87); }
+    a:hover { color: #7bb32e;}
+  }
+
+  &__instagram {
+    i { transform: scale(.97); top: 1rem; }
+    a:hover { color: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);}
+  }
+
+  &__whatsapp {
+    a:hover { color: #1ebea5;} // #128c7e;
+  }
+
+  &__behance {
+    i { transform: scale(.88); }
+    a:hover { color: #1769ff;}
+  }
+
+  &__medium {
+    i { transform: scale(.92); }
+    a:hover { color: #00ab6c;}
+  }
+
+  &__codepen {
+    i { transform: scale(.97); }
+    a:hover { color: #ff3c41;}
+  }
+
+  &__twitter {
+    a:hover { color: #1da1f2;}
+  }
+}

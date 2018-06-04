@@ -1,0 +1,223 @@
+//@import "bulma/css/bulma.min.css";
+@import "font-awesome/css/font-awesome.css";
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,300,400');
+
+body {
+  background: url('../assets/bg.jpg');
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  font-family: 'Dosis';
+}
+
+html, body, .is-fullheight {
+  /* Height and width fallback for older browsers. */
+  height: 100%;
+  width: 100%;
+
+  /* Set the height to match that of the viewport. */
+  height: 100vh;
+
+  /* Set the width to match that of the viewport. */
+  width: 100vw;
+
+  /* Remove any browser-default margins. */
+  margin: 0;
+}
+$text-color: #fff;
+
+.container {
+  max-width: 80%;
+  margin: auto;
+}
+
+.hello-world {
+  background: rgba(0,0,0,.5);
+  color: $text-color;
+
+  &__my-photo {
+    position: relative;
+    width: 100%;
+    background: beige;
+    background: url('../assets/pawel-zentala-hover.png');
+    background-size: cover;
+    background-position: 50%;
+    border-radius: 50%;
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__contact-me {
+    margin-top: 1.5rem ;
+    border: none !important;
+    line-height: 2.75rem !important;
+    padding: 0 2em !important;
+    //padding-right: 2em !important;
+    height: 2.7rem !important;
+    letter-spacing: 0.15rem;
+  }
+
+  &__my-desc {
+    font-size: 1.2rem;
+    font-weight: 200;
+  }
+
+  &__my-name {
+    color: $text-color !important;
+    font-weight: 200 !important;
+  }
+
+  &__my-title {
+    font-size: 0.8rem !important;
+    color: $text-color !important;
+    position: relative;
+    margin-bottom: 3rem !important;
+
+    &:after {
+      width: 5rem;
+      height: 0.05rem;
+      background: $text-color;
+      position: absolute;
+      bottom: -1.6rem;
+      left: 0;
+      content: '';
+    }
+
+  }
+}
+
+ul.is-inline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block
+  }
+}
+
+.button + .is-clearfix { height: 1rem; }
+
+.social_media {
+  padding-top: 30px;
+
+
+  a {
+    color: rgba(255,255,255,.7);
+    font-size: 220%;
+    margin-right: 10px;
+    transition: all .2s ease-out;
+    &:hover i{
+      //transform: scale(1.02);
+    }
+  }
+
+  .facebook {
+    //i { transform: scale(.83); position: relative; left: -4%; bottom: -2%; }
+    a:hover { color: #3b5998; }
+  }
+
+  .linkedin {
+    //i { transform: scale(.78); }
+    a:hover { color: #007bb5;  }
+  }
+
+  .youtube {
+    //i { transform: scale(.85); }
+    a:hover { color: #ff0000;  }
+  }
+
+  .whatsapp a:hover { color: #4dc247;  }
+
+  .pinterest a:hover { color: #cb2027;  }
+
+  .snapchat a:hover { color: #fffc00;  }
+
+  .github {
+    //i { transform: scale(.95); }
+    //a:hover { color: #24292e; }
+    a:hover { color: #fff; }
+  }
+
+  .stackoverflow {
+    //i { transform: scale(.88); }
+    //a:hover { background: #f48024; color: #222426; } // #bcbbbb
+    a:hover { color: #f48024; } // #bcbbbb
+  }
+
+  .skype {
+    //i { transform: scale(.92); }
+    a:hover { color: #00aff0; } // #222426
+  }
+
+  .weixin {
+    //i { transform: scale(.87); }
+    a:hover {color: #7bb32e;  }
+  }
+
+  .instagram {
+    //i { transform: scale(.97); }
+    a:hover { color: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);  }
+  }
+
+  .whatsapp a:hover { background: #1ebea5; } // #128c7e;
+
+  .behance {
+    //i { transform: scale(.88); }
+    a:hover { color: #1769ff; }
+  }
+
+  .medium {
+    //i { transform: scale(.92); }
+    a:hover{ color: #00ab6c;  }
+  }
+
+  .codepen {
+    //i { transform: scale(.97); }
+    a:hover{ color: #ff3c41; }
+  }
+
+  .twitter a:hover{ color: #1da1f2; color: #fff; }
+}
+
+//h1 {
+//  font-size: 200% !important;
+//  font-weight: 200 !important;
+//}
+//
+//h2 {
+//  font-size: 2vw;
+//  font-size: 80% !important;
+//  font-weight: 400 !important;
+//  text-transform: uppercase;
+//}
+
+.columns {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+
+  .column {
+    display: flex;
+    flex-grow: 1;
+  }
+
+}
+
+.is-fullheight {
+  //width: 100vw;
+  //height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+}

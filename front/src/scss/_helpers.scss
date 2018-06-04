@@ -1,0 +1,119 @@
+/**
+ * Text
+ */
+
+/** Text transforms */
+.is-uppercase { text-transform: uppercase; }
+.is-lowercase { text-transform: lowercase; }
+.is-capitalize { text-transform: capitalize; }
+
+
+/** Text align text */
+.is-text-left { text-align: left; }
+.is-text-center { text-align: center; }
+.is-text-right { text-align: right; }
+.is-text-justify { text-align: justify; }
+
+.is-no-wrap { white-space: nowrap; }
+
+
+/**
+ * Flex
+ */
+
+/** Vertical align box inside */
+.is-valign-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.is-valign-top {
+  @extend .is-valign-middle;
+  align-self: flex-start;
+}
+
+.is-valign-bottom {
+  @extend .is-valign-middle;
+  align-self: flex-end;
+}
+
+
+
+/**
+ * Floats
+ */
+
+.is-clearfix {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.is-pull-right {
+  float: right;
+}
+
+.is-pull-left {
+  float: left;
+}
+
+
+
+/**
+ * List
+ */
+
+ul.is-inline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+  }
+}
+
+/**
+ * Images
+ */
+
+/** Image in circle */
+.is-image-circle {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 50%;
+
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+/** Responsive image */
+.is-image-responsive {
+  // todo
+}
+
+
+/**
+ * Other
+ */
+
+/** Create fullscreen box */
+.is-fullscreen {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+}
+
+
+/**
+ * Display
+ */
+
+//.is-hidden { visibility: hidden; }
+//.is-visible { visibility: visible; }

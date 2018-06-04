@@ -1,0 +1,152 @@
+/**
+ * Generate buttons colors
+ * Primary color is not generated, because it's color of default button
+ */
+
+/** Regular buttons */
+@mixin generate-button-color($color) {
+  background: $color;
+  color: choose-text-color($color);
+  border: 1px solid darken($color, 5%); // todo replace with variable
+}
+
+/** Outlined buttons */
+@mixin generate-button-outlined-color($color) {
+  background: transparent;
+  color: $color;
+  border: 1px solid $color; // todo replace with variable
+}
+
+@each $name, $color in $colors {
+  @if $name == 'primary' {
+    .button {
+      @include generate-button-color($color);
+
+      &:hover,
+      &.is-hovered {
+        background: darken($color, 10%);
+        border-color: transparent;
+      }
+
+      &:focus,
+      &.is-focused {
+        border-color: transparent;
+        &:not(:active) {
+          box-shadow: 0 0 0 0.2rem rgba($color, 0.25);
+        }
+      }
+
+      &:active,
+      &.is-active {
+        background-color: darken($color, 5%);
+        border-color: transparent;
+      }
+
+      // todo remove efects on hover etc
+      &[disabled] {
+        opacity: .5;
+        cursor: not-allowed;
+      }
+
+      &.is-outlined {
+        @include generate-button-outlined-color($color);
+      }
+    }
+  } @else {
+    .button.is-#{$name} {
+      @include generate-button-color($color);
+
+      &:hover, &.is-hovered {
+        background: darken($color, 10%);
+        border-color: transparent;
+      }
+
+      &:focus,
+      &.is-focused {
+        border-color: transparent;
+        &:not(:active) {
+          box-shadow: 0 0 0 0.12rem rgba($color, 0.25)
+        }
+      }
+
+      &:active,
+      &.is-active {
+        background-color: darken($color, 5%);
+        border-color: transparent;
+      }
+
+      // todo remove efects on hover etc
+      &[disabled] {
+        opacity: .5;
+      }
+
+      &.is-outlined {
+        @include generate-button-outlined-color($color);
+      }
+    }
+  }
+}
+
+
+
+/**
+ * Generate button sizes
+ * Medium size is not generated, beacuse it's default button size
+ */
+
+@mixin generate-button-size($scale) {
+  font-size: 1rem * $scale;
+  line-height: 2.55rem * $scale;
+  padding: 0 1.4rem * $scale;
+  height: 2.5rem * $scale;
+}
+
+@each $name, $scale in $scales {
+  @if $name == 'md' {
+    .button {
+      @include generate-button-size($scale);
+    }
+  } @else {
+    .button.is-#{$name} {
+      @include generate-button-size($scale);
+    }
+  }
+}
+
+
+
+/**
+ * General styles and helpers
+ */
+
+.button {
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: .2rem;
+  margin-right: .4rem;
+  margin-bottom: .4rem;
+
+  /** Rounded button */
+  &.is-rounded {
+    border-radius: 999rem;
+  }
+
+  /** Button without border */
+  &.is-flatten {
+    border: 1px solid transparent;
+  }
+
+  /** TODO Add following features
+   *   -- .is-inverted {} as in Bulma
+   *   -- .is-loading {} as in Bulma
+   *   -- pseudo buttons (no bg, but with hover) like in https://picnicss.com/documentation
+   */
+}
+
+// add forms, and inside
+// radio, checkbox, select, drop file
+
+// add labels
+// wszystkie 5 rozmiarow razy 5 kolorow

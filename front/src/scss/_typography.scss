@@ -1,0 +1,62 @@
+/**
+ * Generate headers (h1, h2, h3, etc)
+ */
+$heading-base-font-size: 1rem;
+$heading-scale: 0.2; // how much headings should grow from h6 to h1
+$headers: ();
+
+@for $i from 1 through 6 {
+  /** Generate map with font sizes */
+  $map: ();
+  $map: map-merge($map, (h#{$i}: $heading-base-font-size + $heading-scale * (6 - $i)) );
+  $headers: map-merge($headers, $map);
+
+  /** Generate header styles */
+  h#{$i} {
+    font-size: map-get($headers, h#{$i});
+    margin-top: map-get($headers, h#{$i})*0.2;
+    margin-bottom: map-get($headers, h#{$i})*0.6;
+    line-height: map-get($headers, h#{$i}) * 1;
+    font-weight: 300;
+  }
+}
+
+
+
+/**
+ * Paragraph
+ */
+
+p {
+  font-size: 1rem;
+  line-height: 1.7rem;
+  margin-top: 1rem*0.2;
+  margin-bottom: 1rem*0.6;
+}
+
+
+
+/**
+ * Title & subtitle
+ */
+
+/** Remove top margin from title */
+.title { margin-top: 0; }
+
+/** Create a small text */
+.subtitle {
+  font-size: 0.8rem;
+}
+
+.separator {
+  width: 10rem;
+  height: 0.1rem;
+  background: map-get($colors, text);
+  position: relative;
+  top: -.55rem;
+}
+
+/** If subtitle is next to title, remove space between them */
+.title + .subtitle {
+  margin-top: -#{$heading-scale*5.5}rem;
+}

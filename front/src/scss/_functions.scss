@@ -1,0 +1,22 @@
+//@mixin apply-to($breakpoint) {
+//  @if map-has-key($breakpoints, $breakpoint) {
+//    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+//      @content;
+//    }
+//  }
+//
+//  @else {
+//    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+//        + "Please make sure it is defined in `$breakpoints` map.";
+//  }
+//}
+
+@function choose-text-color($background) {
+  @if (lightness($background) > 65) {
+    // Lighter backgorund, return dark color
+    @return map-get($colors, dark);
+  } @else {
+    // Darker background, return light color
+    @return map-get($colors, light);
+  }
+}

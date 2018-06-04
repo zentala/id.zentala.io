@@ -2,49 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ILS Dev & Debug Tools</title>
-  <script src="./js/index.js"></script>
+  <title>Paweł Żentała Home Page</title>
   <link rel="stylesheet" href="./scss/index.scss">
+  <script src="js/index.js"></script>
 </head>
 <body>
-  <h1>Paweł Żentała</h1>
-  <p>Jakiś opis o mnie...</p>
-  <h2>Social media</h2>
-  <ul>
-    <li><a href="https://github.com/zentala">GitHub</a></li>
-    <li><a href="">LinkedIn</a></li>
-    <li><a href="">Facebook</a></li>
-    <li><a href="">StackOverflow</a></li>
-    <li><a href="">Instagram</a></li>
-    <li><a href="">Skype</a></li>
-  </ul>
-  <h2>Artykuły</h2>
-  <ul>
-    <li><a href="">Jak ograniczyć piractwo Twoich materiałów o 70%?</a></li>
-    <li><a href="">Jak stworzyć genialny pomysł na startup? [streszczenie]</a></li>
-    <li><a href="">Przyszłość e-learningu – relacja z Digital Learning Congress</a></li>
-    <li><a href="">2 proste triki, dzięki którym zwiekszyłem czas spędzony na stronie o 402%</a></li>
-    <li><a href="">Jak napisać książkę w 14 dni?</a></li>
-    <li><a href="">Historie Sukcesu Naszych Klientów</a></li>
-  </ul>
-  <h2>Projekty</h2>
-  <ul>
-    <li>Scrum My Life</li>
-    <li>Altruisto - wspieram</li>
-    <li>woocommerce-getresponse-sync</li> - wtyczka wordpress
-    <li>lotto-app</li>
-    <li>wifi</li>
-    <li>appka jurka</li>
-  </ul>
-  <h2>Proudly created with</h2>
-  <ul>
-    <li><a href="https://bulma.io/">Bulma</a></li>
-    <li>Node</li>
-    <li>Parcel</li>
-  </ul>
+
+<div class="video-hero hello-world is-fullscreen is-valign-middle">
+  <div class="video-hero__container">
+    <!--<div class="filter"></div>-->
+    <video class="video-hero__video"><!-- autoplay loop -->
+      <source src="./img/Love-Coding.mp4" type="video/mp4" />
+      <source src="./img/Love-Coding.webm" type="video/webm" />
+    </video>
+    <div class="video-hero__poster hidden">
+      <img src="./img/Love-Coding.jpg" alt="">
+    </div>
+  </div>
+
+
+  <div class="container hello-world__bg is-valign-middle">
+    <div class="column col-lg-7">
+      <h1 class="title hello-world__my-name">Hi, I'm Paweł Żentała</h1>
+      <h2 class="subtitle hello-world__my-title is-uppercase has-separator">Full-Stack Developer</h2>
+      <div class="separator"></div>
+      <p class="hello-world__my-desc">
+        I'm a software developer living in Hong Kong. Currently I'm working as a Senior JavaScript Full Stack
+        Engineer at <a href="http://ubudu.com" target="_blank">Ubudu</a>, where I develop <span class="is-no-wrap">IoT-based</span> indoor location
+        solutions. Presently I'm and not accepting freelance work, but I'd love to get coffee and get to know you.
+        <!--So don’t hesitate to get in touch. -->
+        <!--I am also working on a few side projects, about that you can read bellow.-->
+      </p>
+      <a href="mailto:zentala@gmail.com" class="button is-uppercase is-warning is-flatten is-rounded hello-world__contact-me">Get in touch</a>
+      <div class="is-clearfix"></div>
+      <ul class="is-inline social-media">
+        <li class="social-media__linkedin"><a href="https://www.linkedin.com/in/zentala/" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+        <li class="social-media__github"><a href="https://github.com/zentala" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li class="social-media__stackoverflow"><a href="https://stackoverflow.com/users/7490418/pawel-zentala?tab=profile" target="_blank"><i class="fa fa-stack-overflow"></i></a></li>
+        <!--<li class="social-media__skype"><a href="skype:p.zentala"><i class="fa fa-skype"></i></a></li>-->
+        <li class="social-media__weixin"><a href="weixin://dl/chat?zentala"><i class="fa fa-weixin"></i></a></li>
+      </ul>
+    </div>
+    <div class="column is-1"></div>
+    <div class="column is-4">
+      <div class="hello-world__my-photo is-image-circle"></div>
+    </div>
+
+  </div>
+
+
+</div>
+
+
 
 </body>
 </html>

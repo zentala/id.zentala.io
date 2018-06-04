@@ -1,0 +1,139 @@
+@keyframes animateHidden {
+  0% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes animateHeader {
+  0% { opacity: 0; transform: translateY(-1rem); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes animateTitle {
+  0% { opacity: 0; transform: translateY(0.6rem); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes animateSeparator {
+  0% { transform: scaleX(0); opacity: 0; background: darken(map-get($colors, warning), 0) }
+  3% { opacity: 1; background: darken(map-get($colors, warning), 20%); }
+  6% {  transform: scaleX(1); }
+  85% { background: darken(map-get($colors, warning), 20%); }
+  100% { background: rgba(#fff, .5); }
+}
+
+@keyframes animateDesc {
+  0% { opacity: 0; transform: translateY(0.3rem); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes animateButton {
+  0% { opacity: 0; transform: scale(.7); }
+  70% { transform: scale(1); }
+  100% { opacity: 1; }
+}
+
+@keyframes animateSocialIcon {
+  0% { opacity: 0; transform: translateY(1.8rem); }
+  80% { transform: translateY(-0.3rem); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes animatePhoto {
+  0% { opacity: 0; transform: scale(1.1); }
+  //80% { transform: scale(1); }
+  //90% { transform: scale(1.005); }
+  100% { opacity: 1;  }
+}
+
+@keyframes animateFromBottom {
+  0% { opacity: 0; transform: translateY(2rem); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hello-world {
+  background: #000000;
+  color: #fff;
+
+  &--transparent {
+    background: rgba(#000000, 0.6);
+    transition: background ease-out 1s;
+  }
+
+  h1, h2, p {
+    text-shadow: .05rem .05rem 0 rgba(#000, .8);
+    cursor: default;
+  }
+
+  .video-hero__container {}
+  .video-hero__video {}
+  .video-hero__poster {
+    opacity: 1;
+    background: red;
+    transition: opacity ease-out 0.3s;
+
+    &--hidden {
+      opacity: 0;
+    }
+  }
+
+  &__my-name {
+    font-weight: 300;
+  }
+
+  &__my-title {
+    color: rgba(#fff, 0.5);
+    text-shadow: none !important;
+    font-family: "Montserrat", "Quicksand", sans-serif;
+    font-weight: 500;
+  }
+
+  .separator { background: rgba(#fff,0.5) !important; width: 4rem; }
+
+  &__my-desc { margin-bottom: .8rem; }
+
+  &__contact-me {
+    letter-spacing: 0.14rem;
+    margin-bottom: 0.55rem;
+    box-shadow: .05rem .05rem 0 0 rgba(#000, .8);
+    position: relative;
+    left: -0.1rem;
+    font-weight: 500;
+    transition: transform ease-in .5s;
+
+    &:hover {
+      transform: scale(1.05);
+      transition: transform ease-out 0.2s;
+    }
+  }
+
+  &__my-photo {
+    background-image: url('../img/pawel-zentala-scaled.jpg');
+    box-shadow: .05rem .05rem 0 0 rgba(#000, .8);
+
+    transition: transform 1s;
+
+    &:hover {
+      transition: transform .3s;
+      transform: scale(1.1);
+    }
+  }
+
+  //animation: <name> <duration> <timing-function> <delay>;
+  &__my-name    { animation: animateHidden 0.1s linear 0s, animateHeader 1s ease-in 0s; }
+  &__my-title   { animation: animateHidden 0.4s linear 0s, animateTitle 1s ease-in 0.4s; }
+  .separator    { animation: animateHidden 1.4s linear 0s, animateSeparator 12s ease-out 1.4s; transform-origin: top left; }
+  &__my-desc    { animation: animateHidden 2.5s linear 0s, animateDesc 0.5s ease-in 2.5s; }
+  &__contact-me { animation: animateHidden 6.9s linear 0s, animateButton 0.7s ease-in 6.9s; }
+  &__my-photo   { animation: animateHidden 7.0s linear 0s, animatePhoto 0.45s ease-in 7.0s; }
+  .social-media {
+    li:nth-child(1) {animation: animateHidden 8.5s linear 0s, animateSocialIcon 1s ease-in 8.5s;}
+    li:nth-child(2) {animation: animateHidden 8.8s linear 0s, animateSocialIcon 1s ease-in 8.8s;}
+    li:nth-child(3) {animation: animateHidden 9.1s linear 0s, animateSocialIcon 1s ease-in 9.1s;}
+    li:nth-child(4) {animation: animateHidden 9.4s linear 0s, animateSocialIcon 1s ease-in 9.4s;}
+  }
+
+}
+
+
+
