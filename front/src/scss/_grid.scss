@@ -2,44 +2,135 @@
   width: 100%;
   //background: #eee;
 
-  @media (min-width: map-get($breakpoints, md)) { max-width: 90vw; }
+  //@media (min-width: map-get($breakpoints, md)) { max-width: 90vw; }
   @media (min-width: map-get($breakpoints, lg)) { max-width: 80vw; }
 }
+
+
+
+/**
+ * Columns classes
+ * .col-{xs|sm|md|lg|xl}-{1-12}
+ */
 
 @mixin generate-column($i) {
   width: #{($i/12*100)+%};
 }
 
-.column {
+.col-* {
   float: left;
   min-height: 1px;
-  &.is-1 { width: #{(1/12*100)+%}; }
-  &.is-4 { width: #{(4/12*100)+%}; }
-  &.is-7 { width: #{(7/12*100)+%}; }
-  &.is-8 { width: #{(8/12*100)+%}; }
+}
 
-  @each $name, $breakpoint in $breakpoints {
-
-    @if $breakpoint == 'xs' {
+@each $name, $breakpoint in $breakpoints {
+  @if $breakpoint == 'xs' {
+    @for $i from 1 through 12 {
+      .col-#{$name}-#{$i} {
+        @include generate-column($i);
+      }
+    }
+  }
+  @else {
+    @media (min-width: $breakpoint) {
       @for $i from 1 through 12 {
         .col-#{$name}-#{$i} {
           @include generate-column($i);
         }
       }
     }
+  }
+}
 
-    @else {
-      @media (min-width: $breakpoint) {
-        @for $i from 1 through 12 {
-          .col-#{$name}-#{$i} {
-            @include generate-column($i);
-          }
+
+/**
+ * Hidden & visible classes
+ * .is-hidden
+ * .is-hidden-{xs|sm|md|lg|xl}
+ * .is-hidden-{landscape|portrait}-{xs|sm|md|lg|xl}
+ */
+
+@mixin generate-hidden() {
+  display: none;
+}
+
+@mixin generate-visible() {
+  display: block;
+}
+
+.is-hidden {
+  @include generate-hidden();
+}
+
+$statuses-list: visible, hidden;
+$orientations-list: landscape, portrait;
+
+@each $name, $breakpoint in $breakpoints {
+  @if $name == 'xs' {
+
+    @each $status-name in $statuses-list {
+      @media (max-width: map-get-prev($breakpoints, $name)-1) {
+        .is-#{$status-name}-#{$name} {
+          @if $status-name == 'visible' { @include generate-visible() }
+          @else if $status-name == 'hidden' { @include generate-hidden() }
         }
       }
-    }
 
-
+      @each $orientation-name in $orientations-list {
+        @media (max-width: map-get-prev($breakpoints, $name)-1) and (orientation: #{$orientation-name}) {
+          .is-#{$status-name}-#{$orientation-name}-#{$name} {
+            @if $status-name == 'visible' { @include generate-visible() }
+            @else if $status-name == 'hidden' { @include generate-hidden() }
+          }
+        }
+      } // orientations (landscape|portrait)
+    } // statuses (hidden|visible)
 
   }
 
+  @else if $name == 'xl' {
+
+    @each $status-name in $statuses-list {
+      @media (min-width: $breakpoint) {
+        .is-#{$status-name}-#{$name} {
+          @if $status-name == 'visible' { @include generate-visible() }
+          @else if $status-name == 'hidden' { @include generate-hidden() }
+        }
+      }
+
+      @each $orientation-name in $orientations-list {
+        @media (min-width: $breakpoint) and (orientation: #{$orientation-name}) {
+          .is-#{$status-name}-#{$orientation-name}-#{$name} {
+            @if $status-name == 'visible' { @include generate-visible() }
+            @else if $status-name == 'hidden' { @include generate-hidden() }
+          }
+        }
+      } // orientations (landscape|portrait)
+    } // statuses (hidden|visible)
+
+  }
+
+  @else {
+
+    @each $status-name in $statuses-list {
+      @media (min-width: $breakpoint) and (max-width: map-get-prev($breakpoints, $name)-1) {
+        .is-#{$status-name}-#{$name} {
+          @if $status-name == 'visible' { @include generate-visible() }
+          @else if $status-name == 'hidden' { @include generate-hidden() }
+        }
+      }
+
+      @each $orientation-name in $orientations-list {
+        @media (min-width: $breakpoint) and (max-width: map-get-prev($breakpoints, $name)-1) and (orientation: #{$orientation-name}) {
+          .is-#{$status-name}-#{$orientation-name}-#{$name} {
+            @if $status-name == 'visible' { @include generate-visible() }
+            @else if $status-name == 'hidden' { @include generate-hidden() }
+          }
+        }
+      } // orientations (landscape|portrait)
+    } // statuses (hidden|visible)
+
+  }
 }
+
+// (orientation: landscape)
+// (orientation: portrait)

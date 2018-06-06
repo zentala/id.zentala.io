@@ -6,7 +6,13 @@ html, body {
 
   font-family: Montserrat, Ubuntu, Verdana;
   color: map-get($colors, white);
-  font-size: 1.3vw;
+  //font-size: 1.3vw;
+
+  @each $breakpoint-name, $size in $font-sizes {
+    @if $breakpoint-name == 'xs' { font-size: $size; }
+    @else { @media (min-width: map-get($breakpoints, $breakpoint-name)) { font-size: $size; } }
+  }
+
 }
 
 body,

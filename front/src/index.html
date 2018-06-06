@@ -12,8 +12,8 @@
 
 <div class="video-hero hello-world is-fullscreen is-valign-middle">
   <div class="video-hero__container">
-    <!--<div class="filter"></div>-->
-    <video class="video-hero__video"><!-- autoplay loop -->
+    <div class="filter"></div>
+    <video loop autoplay muted controls="false" class="video-hero__video is-hidden">
       <source src="./img/Love-Coding.mp4" type="video/mp4" />
       <source src="./img/Love-Coding.webm" type="video/webm" />
     </video>
@@ -24,7 +24,8 @@
 
 
   <div class="container hello-world__bg is-valign-middle">
-    <div class="column col-lg-7">
+    <div class="col-lg-7">
+      <div class="hello-world__my-photo hello-world__my-photo--small is-image-circle is-hidden is-visible-landscape-xs is-visible-landscape-sm"></div>
       <h1 class="title hello-world__my-name">Hi, I'm Paweł Żentała</h1>
       <h2 class="subtitle hello-world__my-title is-uppercase has-separator">Full-Stack Developer</h2>
       <div class="separator"></div>
@@ -45,10 +46,11 @@
         <li class="social-media__weixin"><a href="weixin://dl/chat?zentala"><i class="fa fa-weixin"></i></a></li>
       </ul>
     </div>
-    <div class="column is-1"></div>
-    <div class="column is-4">
+    <div class="column col-md-1 col-lg-1 is-hidden-landscape-xs is-hidden-landscape-sm hello-world__margin"></div>
+    <div class="col-lg-4 is-hidden-landscape-xs is-hidden-landscape-sm">
       <div class="hello-world__my-photo is-image-circle"></div>
     </div>
+    <div class="is-clearfix"></div>
 
   </div>
 
