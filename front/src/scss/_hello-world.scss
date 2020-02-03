@@ -97,9 +97,11 @@
   .video-hero__container {
     position: fixed;
   }
+
   .video-hero__video {
     transition: opacity ease-out 1s;
   }
+
   .video-hero__poster {
     opacity: 1;
     transition: opacity ease-out 1s;
@@ -107,6 +109,15 @@
     &--hidden {
       opacity: 0;
     }
+  }
+
+  .video-hero__shadow {
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 
   &__my-name {
