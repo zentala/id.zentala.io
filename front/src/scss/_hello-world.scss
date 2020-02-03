@@ -52,8 +52,6 @@
 
 @keyframes animatePhoto {
   0% { opacity: 0; transform: scale(1.1); }
-  //80% { transform: scale(1); }
-  //90% { transform: scale(1.005); }
   100% { opacity: 1;  }
 }
 
@@ -63,28 +61,18 @@
 }
 
 .hello-world {
-  background: #000000;
   color: #fff;
 
   @media (max-width: map-get($breakpoints,lg)-1) {
     padding: 4vw;
     display: block;
     height: auto;
-    //align-items: flex-start;
   }
-
-  //@debug #{};
-  // @debug dd;
 
   .container {
     @media (max-width: map-get($breakpoints, lg)-1) {
-      //padding: 0 1rem;
       flex-direction: column-reverse;
       align-items: flex-start;
-
-      //align-items: flex-start;
-      //background: red;
-      //justify-content: ;
     }
   }
 
@@ -114,7 +102,6 @@
   }
   .video-hero__poster {
     opacity: 1;
-    background: red;
     transition: opacity ease-out 1s;
 
     &--hidden {
@@ -134,7 +121,6 @@
   }
 
   .separator {
-    // background: rgba(#fff,0.5) !important;
     background: darken(map-get($colors, warning), 15%);
     width: 4rem;
   }
@@ -190,15 +176,7 @@
     }
   }
 
-  //animation: <name> <duration> <timing-function> <delay>;
-
   @media (min-width: map-get($breakpoints, lg)) {
-    // &__my-name    { animation: animateHidden 0.1s linear 0s, animateHeader 1s ease-in 0s; }
-    // &__my-title   { animation: animateHidden 0.4s linear 0s, animateTitle 1s ease-in 0.4s; }
-    // .separator    { animation: animateHidden 1.4s linear 0s, animateSeparator 12s ease-out 1.4s; transform-origin: top left; }
-    // &__my-desc    { animation: animateHidden 2.5s linear 0s, animateDesc 0.5s ease-in 2.5s; }
-    // &__contact-me { animation: animateHidden 6.9s linear 0s, animateButton 0.7s ease-in 6.9s; }
-
     &__my-name    { animation: animateHidden 0.1s linear 0s, animateHeader 0.5s ease-in 0s; }
     &__my-title   { animation: animateHidden 0.2s linear 0s, animateTitle 0.5s ease-in 0.2s; }
     .separator    { animation: animateHidden 0.4s linear 0s, animateSeparator 0.5s ease-out 0.4s; transform-origin: top left; }
@@ -214,6 +192,3 @@
   }
 
 }
-
-
-
