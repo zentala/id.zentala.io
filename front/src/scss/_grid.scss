@@ -1,12 +1,9 @@
 .container {
   width: 100%;
-  //background: #eee;
-
-  //@media (min-width: map-get($breakpoints, md)) { max-width: 90vw; }
-  @media (min-width: map-get($breakpoints, lg)) { max-width: 80vw; }
+  @media (min-width: map-get($breakpoints, lg)) {
+    max-width: 80vw;
+  }
 }
-
-
 
 /**
  * Columns classes

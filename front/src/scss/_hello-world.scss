@@ -29,7 +29,7 @@
   3% { opacity: 1; background: darken(map-get($colors, warning), 20%); }
   6% {  transform: scaleX(1); }
   85% { background: darken(map-get($colors, warning), 20%); }
-  100% { background: rgba(#fff, .5); }
+  100% { background: darken(map-get($colors, warning), 15%); }
 }
 
 @keyframes animateDesc {
@@ -74,7 +74,7 @@
   }
 
   //@debug #{};
-  @debug dd;
+  // @debug dd;
 
   .container {
     @media (max-width: map-get($breakpoints, lg)-1) {
@@ -98,7 +98,7 @@
 
   &--transparent {
     background: rgba(#000000, 0.6);
-    transition: background ease-out 1s;
+    transition: background ease-out 1s; /* 1s */
   }
 
   h1, h2, p {
@@ -133,9 +133,15 @@
     font-weight: 500;
   }
 
-  .separator { background: rgba(#fff,0.5) !important; width: 4rem; }
+  .separator {
+    // background: rgba(#fff,0.5) !important;
+    background: darken(map-get($colors, warning), 15%);
+    width: 4rem;
+  }
 
-  &__my-desc { margin-bottom: .8rem; }
+  &__my-desc {
+    margin-bottom: .8rem;
+  }
 
   &__contact-me {
     letter-spacing: 0.14rem;
@@ -156,7 +162,7 @@
     background-image: url('../img/pawel-zentala-scaled.jpg');
     box-shadow: .05rem .05rem 0 0 rgba(#000, .8);
     transition: transform 1s;
-    shape-outside:circle();
+    shape-outside: circle();
 
     @media (max-width: map-get($breakpoints, lg)-1) {
       width: 30vw;
@@ -187,17 +193,23 @@
   //animation: <name> <duration> <timing-function> <delay>;
 
   @media (min-width: map-get($breakpoints, lg)) {
-    &__my-name    { animation: animateHidden 0.1s linear 0s, animateHeader 1s ease-in 0s; }
-    &__my-title   { animation: animateHidden 0.4s linear 0s, animateTitle 1s ease-in 0.4s; }
-    .separator    { animation: animateHidden 1.4s linear 0s, animateSeparator 12s ease-out 1.4s; transform-origin: top left; }
-    &__my-desc    { animation: animateHidden 2.5s linear 0s, animateDesc 0.5s ease-in 2.5s; }
-    &__contact-me { animation: animateHidden 6.9s linear 0s, animateButton 0.7s ease-in 6.9s; }
+    // &__my-name    { animation: animateHidden 0.1s linear 0s, animateHeader 1s ease-in 0s; }
+    // &__my-title   { animation: animateHidden 0.4s linear 0s, animateTitle 1s ease-in 0.4s; }
+    // .separator    { animation: animateHidden 1.4s linear 0s, animateSeparator 12s ease-out 1.4s; transform-origin: top left; }
+    // &__my-desc    { animation: animateHidden 2.5s linear 0s, animateDesc 0.5s ease-in 2.5s; }
+    // &__contact-me { animation: animateHidden 6.9s linear 0s, animateButton 0.7s ease-in 6.9s; }
+
+    &__my-name    { animation: animateHidden 0.1s linear 0s, animateHeader 0.5s ease-in 0s; }
+    &__my-title   { animation: animateHidden 0.2s linear 0s, animateTitle 0.5s ease-in 0.2s; }
+    .separator    { animation: animateHidden 0.4s linear 0s, animateSeparator 0.5s ease-out 0.4s; transform-origin: top left; }
+    &__my-desc    { animation: animateHidden 0.6s linear 0s, animateDesc 1s ease-in 0.6s; }
+    &__contact-me { animation: animateHidden 1.0s linear 0s, animateButton 0.5s ease-in 1s; }
 
     .social-media {
-      li:nth-child(1) {animation: animateHidden 8.5s linear 0s, animateSocialIcon 1s ease-in 8.5s;}
-      li:nth-child(2) {animation: animateHidden 8.8s linear 0s, animateSocialIcon 1s ease-in 8.8s;}
-      li:nth-child(3) {animation: animateHidden 9.1s linear 0s, animateSocialIcon 1s ease-in 9.1s;}
-      li:nth-child(4) {animation: animateHidden 9.4s linear 0s, animateSocialIcon 1s ease-in 9.4s;}
+      li:nth-child(1) {animation: animateHidden 1.1s linear 0s, animateSocialIcon 1s ease-in 1.1s;}
+      li:nth-child(2) {animation: animateHidden 1.2s linear 0s, animateSocialIcon 1s ease-in 1.2s;}
+      li:nth-child(3) {animation: animateHidden 1.3s linear 0s, animateSocialIcon 1s ease-in 1.3s;}
+      li:nth-child(4) {animation: animateHidden 1.4s linear 0s, animateSocialIcon 1s ease-in 1.4s;}
     }
   }
 
