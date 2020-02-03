@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^8.5.1",
+    "babel-core": "^6.26.3",
     "foreman": "^2.0.0",
     "parcel-bundler": "^1.8.1",
     "postcss-modules": "^1.1.0"
