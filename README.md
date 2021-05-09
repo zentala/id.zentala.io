@@ -1,7 +1,12 @@
 # Zentala.IO [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/zentala/id.zentala.io)
 
 ## 🌍 Overview
-One-page, modern, and minimalistic developer personal home page hosted serverless on GitHub and developed via GitPod. Feel free to fork it for your own!
+Modern, minimalistic, one-page - developer personal home page. Hosted serverless on GitHub and developed via GitPod. Feel free to fork it for your own!
+
+![Design animated preview](preview.gif "Design animated preview")
+
+Check out live example: https://id.zentala.io/
+
 
 ## 🏗 Dependencies & Environment
 * [Parcel.js](https://parceljs.org/) - web application bundler
