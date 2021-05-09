@@ -2,12 +2,13 @@ image:
   file: .gitpod.Dockerfile
 
 ports:
-  - port: 8000
+  - port: 2000
     onOpen: open-preview
 
 tasks:
   - init: npm install
-    command: npm run start
+    command: npm run dev
+    openMode: split-left
 
 github:
   prebuilds:

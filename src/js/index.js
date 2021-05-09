@@ -4,10 +4,10 @@ document.onmousedown = () => { return false };
 
 /** Show video when its load */
 window.addEventListener('DOMContentLoaded', () => {
-  const video = document.querySelector(".video-hero__video");
-  const poster = document.querySelector(".video-hero__poster");
-  const posterImage = document.querySelector(".video-hero__poster img");
-  const helloWorld = document.querySelector(".hello-world");
+  const video = document.querySelector('.video-hero__video');
+  const poster = document.querySelector('.video-hero__poster');
+  const posterImage = document.querySelector('.video-hero__poster img');
+  const helloWorld = document.querySelector('.hello-world');
 
   // on posterImage loaded make cover transparent
   posterImage.onload = () => helloWorld.classList.add('hello-world--transparent');
