@@ -15,7 +15,7 @@
     "start": "node server/index",
     "dev": "node ./node_modules/parcel-bundler/bin/cli.js src/index.html -p 2000 -d deploy/",
     "build": "node ./node_modules/parcel-bundler/bin/cli.js build src/index.html -d deploy/",
-    "deploy": "npm build && echo \"id.zentala.io\" >> deploy/CNAME && gh-pages -d deploy -b deploy"
+    "deploy": "npm run build && echo \"id.zentala.io\" >> deploy/CNAME && gh-pages -d deploy -b deploy"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
