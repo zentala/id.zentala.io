@@ -1,18 +1,18 @@
 # Zentala.IO [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/zentala/id.zentala.io)
 
-## Overview
-## Dependencies
+## 🌍 Overview
+One-page, modern, and minimalistic developer personal home page hosted serverless on GitHub and developed via GitPod. Feel free to fork it for your own!
+
+## 🏗 Dependencies & Environment
 * [Parcel.js](https://parceljs.org/) - web application bundler
 * [nvm](https://github.com/nvm-sh/nvm) (Node Version Manager)
-
-## Environment
 * [GitHub Pages](https://pages.github.com/) for serverless hosting
 * [GitPod](https://www.gitpod.io/) for web-development setup
 
-## GitPod development
+## ⚡️ Online (GitPod) development
 Just click `Gitpod` button above.
 
-## Local development
+## 💻 Local development
 ### Setup
 ```
 $ git clone git@github.com:zentala/id.zentala.io.git
