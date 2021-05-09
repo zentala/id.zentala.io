@@ -11,7 +11,7 @@
  */
 
 @mixin generate-column($i) {
-  width: #{($i/12*100)+%};
+  width: #{($i/12*100)+"%"};
 }
 
 .col-* {
