@@ -1,6 +1,6 @@
 .idea/
 .cache/
+.history/
 node_modules/
-front/dist/
+deploy/
 yarn*
-

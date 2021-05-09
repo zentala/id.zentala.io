@@ -13,8 +13,9 @@
   ],
   "scripts": {
     "start": "node server/index",
-    "dev": "node ./node_modules/parcel-bundler/bin/cli.js front/src/index.html -p 2000 -d front/dist/",
-    "build": "node ./node_modules/parcel-bundler/bin/cli.js build front/src/index.html -d front/dist/"
+    "dev": "node ./node_modules/parcel-bundler/bin/cli.js src/index.html -p 2000 -d deploy/",
+    "build": "node ./node_modules/parcel-bundler/bin/cli.js build src/index.html -d deploy/",
+    "deploy": "npm build && echo \"id.zentala.io\" >> deploy/CNAME && gh-pages -d deploy -b deploy"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
@@ -39,6 +40,7 @@
     "autoprefixer": "^8.5.1",
     "babel-core": "^6.26.3",
     "foreman": "^2.0.0",
+    "gh-pages": "^3.1.0",
     "parcel-bundler": "^1.8.1",
     "postcss-modules": "^1.1.0"
   }
