@@ -32,7 +32,7 @@ For more about GitHub Pages configuration go to the [official documentation](htt
 
 Congrats. Your website should be avaliable under choosen domain name!
 
-## 🏗 Dependencies & Environment
+## 📦 Dependencies & Environment
 * [Parcel.js](https://parceljs.org/) - web application bundler
 * [nvm](https://github.com/nvm-sh/nvm) (Node Version Manager)
 * [GitHub Pages](https://pages.github.com/) for serverless hosting
