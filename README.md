@@ -1,4 +1,4 @@
-# Zentala.IO [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/zentala/id.zentala.io)
+# Zentala.IO [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/zentala/id.zentala.io) [![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/emersion/stability-badges#stable)
 
 ## 🌍 Overview
 Modern, minimalistic, one-page - developer personal home page. Hosted serverless on GitHub and developed via GitPod. Feel free to fork it for yourself!
