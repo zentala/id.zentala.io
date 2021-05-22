@@ -12,9 +12,12 @@
     }
   ],
   "scripts": {
-    "dev": "node ./node_modules/parcel-bundler/bin/cli.js src/index.html watch -p 2000 -d deploy/",
-    "build": "node ./node_modules/parcel-bundler/bin/cli.js build src/index.html -d deploy/",
-    "deploy": "npm run build && echo \"id.zentala.io\" >> deploy/CNAME && gh-pages -d deploy -b deploy"
+    "dev": " npx parcel src/index.html watch -p 2000 -d deploy/",
+    "deploy": "npm run deploy:clean && npm run deploy:build && npm run deploy:setup && npm run deploy:push",
+    "deploy:clean": "rm -rf deploy/",
+    "deploy:setup": "echo \"id.zentala.io\" >> deploy/CNAME",
+		"deploy:build": "npx parcel build src/index.html -d deploy/",
+		"deploy:push": "npx gh-pages -d deploy -b deploy"
   },
   "dependencies": {
     "@fontsource/montserrat": "^4.3.0",
