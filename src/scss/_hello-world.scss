@@ -28,7 +28,7 @@
 }
 
 @keyframes animateSeparator {
-  0% { transform: scaleX(0); opacity: 0; background: darken(map-get($colors, warning), 0) }
+  0% { transform: scaleX(0); opacity: 0; background: map.get($colors, warning) }
   3% { opacity: 1; background: color.scale(map.get($colors, warning), $lightness: -20%); }
   6% {  transform: scaleX(1); }
   85% { background: color.scale(map.get($colors, warning), $lightness: -20%); }
@@ -190,7 +190,7 @@
     }
   }
 
-  @media (min-width: map-get($breakpoints, lg)) {
+  @media (min-width: map.get($breakpoints, lg)) {
     &__my-name    { animation: animateHidden 0.1s linear 0s, animateHeader 0.5s ease-in 0s; }
     &__my-title   { animation: animateHidden 0.2s linear 0s, animateTitle 0.5s ease-in 0.2s; }
     .separator    { animation: animateHidden 0.4s linear 0s, animateSeparator 0.5s ease-out 0.4s; transform-origin: top left; }
