@@ -1,0 +1,9 @@
+---
+alwaysApply: true
+---
+
+# Project Context
+
+- Modern, and minimalistic personal home page for developers.
+- Hosted serverless on GitHub, build with Parcel.js
+- Stack: SCSS, HTML, JavaScript

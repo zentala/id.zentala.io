@@ -4,3 +4,6 @@
 node_modules/
 deploy/
 yarn*
+
+.specstory/**
+.cursorindexingignore
