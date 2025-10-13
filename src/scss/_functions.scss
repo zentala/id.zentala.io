@@ -1,5 +1,7 @@
 @use 'sass:color';
 @use 'sass:map';
+@use 'sass:meta';
+@use 'sass:list';
 @use 'variables' as *;
 //@mixin apply-to($breakpoint) {
 //  @if map-has-key($breakpoints, $breakpoint) {
@@ -31,10 +33,10 @@
 @function map-get-next($map, $key, $fallback: false) {
 
   // Check if map is valid
-  @if type_of($map) == map {
+  @if meta.type-of($map) == map {
 
     // Check if key exists in map
-    @if map_has_key($map, $key) {
+    @if map.has-key($map, $key) {
 
       // Init index counter variable
       $i: 0;
@@ -58,7 +60,7 @@
         }
 
         // If last entry return false
-        @if $i == length($map) {
+        @if list.length($map) == $i {
           @return $fallback;
         }
       }

@@ -3,12 +3,12 @@
 @each $name, $color in $colors {
 
   /** Text Colors */
-  .is-#{$name} {
+  .is-#{"#{$name}"} {
     color: $color;
   }
 
   /** Background color */
-  .is-bg-#{$name} {
+  .is-bg-#{"#{$name}"} {
     background: $color;
   }
 
