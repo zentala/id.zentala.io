@@ -1,3 +1,5 @@
+@use 'sass:map';
+@use 'variables' as *;
 @keyframes onClick {
   0% { opacity: 0; }
   100% { opacity: 0; }

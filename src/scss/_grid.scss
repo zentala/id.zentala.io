@@ -1,3 +1,7 @@
+@use 'sass:math';
+@use 'variables' as *;
+@use 'functions' as *;
+
 .container {
   width: 100%;
   @media (min-width: map-get($breakpoints, lg)) {
@@ -13,7 +17,7 @@
 @mixin generate-column($i) {
   float: left;
   min-height: 1px;
-  width: #{($i/12*100)+"%"};
+  width: #{(math.div($i, 12) * 100) + "%"};
 }
 
 @each $name, $breakpoint in $breakpoints {

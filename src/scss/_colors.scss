@@ -1,3 +1,5 @@
+@use 'sass:map';
+@use 'variables' as *;
 @each $name, $color in $colors {
 
   /** Text Colors */

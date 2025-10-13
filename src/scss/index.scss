@@ -1,15 +1,15 @@
 /** CSS Framework */
-@import "reset";
-@import "variables";
-@import "functions";
-@import "typography";
-@import "colors";
-@import "helpers";
-@import "general";
-@import "grid";
-@import "buttons";
+@use "reset";
+@use "variables";
+@use "functions";
+@use "typography";
+@use "colors";
+@use "helpers";
+@use "general";
+@use "grid";
+@use "buttons";
 
 /** Page modules */
-@import "hello-world";
-@import "video-hero";
-@import "social-media";
+@use "hello-world";
+@use "video-hero";
+@use "social-media";

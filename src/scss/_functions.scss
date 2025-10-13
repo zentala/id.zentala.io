@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'variables' as *;
 //@mixin apply-to($breakpoint) {
 //  @if map-has-key($breakpoints, $breakpoint) {
 //    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
@@ -12,12 +15,12 @@
 //}
 
 @function choose-text-color($background) {
-  @if (lightness($background) > 65) {
+  @if (color.channel($background, 'lightness', $space: hsl) > 65) {
     // Lighter backgorund, return dark color
-    @return map-get($colors, dark);
+    @return map.get($colors, dark);
   } @else {
     // Darker background, return light color
-    @return map-get($colors, light);
+    @return map.get($colors, light);
   }
 }
 

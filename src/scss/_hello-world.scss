@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'variables' as *;
 @keyframes animateHidden {
   0% { opacity: 0; }
   100% { opacity: 0; }
@@ -26,10 +29,10 @@
 
 @keyframes animateSeparator {
   0% { transform: scaleX(0); opacity: 0; background: darken(map-get($colors, warning), 0) }
-  3% { opacity: 1; background: darken(map-get($colors, warning), 20%); }
+  3% { opacity: 1; background: color.scale(map.get($colors, warning), $lightness: -20%); }
   6% {  transform: scaleX(1); }
-  85% { background: darken(map-get($colors, warning), 20%); }
-  100% { background: darken(map-get($colors, warning), 15%); }
+  85% { background: color.scale(map.get($colors, warning), $lightness: -20%); }
+  100% { background: color.scale(map.get($colors, warning), $lightness: -15%); }
 }
 
 @keyframes animateDesc {
@@ -132,7 +135,7 @@
   }
 
   .separator {
-    background: darken(map-get($colors, warning), 15%);
+    background: color.scale(map.get($colors, warning), $lightness: -15%);
     width: 4rem;
   }
 
