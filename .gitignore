@@ -1,11 +1,22 @@
 .idea/
 .cache/
 .history/
+
+# Node
 node_modules/
+
+# Build
 deploy/
+
+# Yarn
 yarn*
 
+# SpecStory
 .specstory/**
 .cursorindexingignore
 
+# Parcel
 .parcel-cache
+
+# Playwright
+test-results/

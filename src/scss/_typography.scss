@@ -63,3 +63,10 @@ p {
 .title + .subtitle {
   margin-top: -#{$heading-scale*5.5}rem;
 }
+
+/** Subtitle suffix styling (e.g., "Engineer" accent) */
+.subtitle-suffix {
+  // color: map.get($colors, light);
+  // font-weight: 600;
+  // margin-left: 0.5rem;
+}
