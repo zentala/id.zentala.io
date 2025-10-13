@@ -57,7 +57,7 @@
       }
     }
   } @else {
-    .button.is-#{$name} {
+    .button.is-#{"#{$name}"} {
       @include generate-button-color($color);
 
       &:hover, &.is-hovered {
@@ -111,7 +111,7 @@
       @include generate-button-size($scale);
     }
   } @else {
-    .button.is-#{$name} {
+    .button.is-#{"#{$name}"} {
       @include generate-button-size($scale);
     }
   }
