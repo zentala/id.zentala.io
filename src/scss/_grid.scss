@@ -11,12 +11,9 @@
  */
 
 @mixin generate-column($i) {
-  width: #{($i/12*100)+"%"};
-}
-
-.col-* {
   float: left;
   min-height: 1px;
+  width: #{($i/12*100)+"%"};
 }
 
 @each $name, $breakpoint in $breakpoints {
