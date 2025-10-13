@@ -7,3 +7,5 @@ yarn*
 
 .specstory/**
 .cursorindexingignore
+
+.parcel-cache

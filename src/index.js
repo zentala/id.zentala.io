@@ -1,5 +1,5 @@
 /* Import styles - Parcel needs it here */
-import 'font-awesome/css/font-awesome.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fontsource/ubuntu';
 import '@fontsource/montserrat';
 import './scss/index.scss';

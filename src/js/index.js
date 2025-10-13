@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
             // hide poster
             poster.classList.add('video-hero__poster--hidden');
           })
-          .catch((err) => console.lo(err));
+          .catch((err) => console.log(err));
       }, 2.5*1000)
     }
   };
