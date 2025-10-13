@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Dev: bootstrap + start",
+      "type": "shell",
+      "windows": {
+        "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File scripts/ensure-node-and-deps.ps1"
+      },
+      "linux": {
+        "command": "bash scripts/ensure-node-and-deps.sh"
+      },
+      "osx": {
+        "command": "bash scripts/ensure-node-and-deps.sh"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}
+
+
