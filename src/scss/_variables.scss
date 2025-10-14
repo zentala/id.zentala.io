@@ -24,11 +24,11 @@ $breakpoints: (
 ) !default;
 
 $font-sizes: (
-  xs: 4.2vw, //4.4
-  sm: 3vw,
-  md: 2.2vw,
-  lg: 1.4vw,
-  xl: 1.3vw
+  xs: 3.78vw, // 4.2 * 0.9
+  sm: 2.7vw,  // 3 * 0.9
+  md: 1.98vw, // 2.2 * 0.9
+  lg: 1.26vw, // 1.4 * 0.9
+  xl: 1.17vw  // 1.3 * 0.9
 ) !default;
 
 // todo for buttons etc, md is base, and we have bigger and smaller
