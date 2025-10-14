@@ -75,3 +75,15 @@ created: YYYY-MM-DD
 
 - Runbook jest wymagany dla KAŻDEGO zadania, także dla prac konfiguracyjnych i porządkowych.
 
+## Post-Execution Reconciliation (Task Updates)
+
+Before setting the final status:
+
+- Open the task file `./.cursor/tasks/task-NNN.mdc` and:
+  - Update `modified: YYYY-MM-DD`.
+  - Update the task body to reflect the final deliverables.
+  - Add a clear list of scope changes (what expanded/reduced and why).
+  - Ensure links to the runbook and any lessons are present.
+  - Set status to `done` (if complete) or appropriate next status.
+  - Optionally record acceptance criteria outcomes in the task body.
+
