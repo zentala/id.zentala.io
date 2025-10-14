@@ -19,3 +19,4 @@ See generated `INDEX.json` or run `pnpm run index:procedures`.
 
 - Task Defining: `./task-defining.mdc`
 - Task Achieving: `./task-achieving.mdc`
+- ADR Creating: `./adr-creating.mdc`

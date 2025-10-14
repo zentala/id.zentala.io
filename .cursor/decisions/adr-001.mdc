@@ -1,0 +1,32 @@
+---
+adr: 001
+title: "Use backticks only with hashtagged concept references"
+status: accepted
+created: 2025-10-14
+supersedes: null
+superseded_by: null
+---
+
+# Context
+
+We previously discouraged using backticks for conceptual terms. We want precise, linkable references to concepts while preserving backticks for code/paths.
+
+# Decision
+
+Use backticks together with hashtagged terms for explicit concept references (e.g., `#always`, `#mind-theory`). Avoid backticks for plain prose concepts. Continue using backticks for code, commands, file paths.
+
+# Consequences
+
+- Improves precision: agents can distinguish conceptual references from prose.
+- Enables consistent interlinking across tasks/rules/runbooks using shortcodes.
+- Requires updating the notation rule in `./.cursor/rules/dict.mdc`.
+
+# Alternatives Considered
+
+- Never using backticks for concepts at all: too limiting and ambiguous.
+- Using custom brackets without backticks: less consistent with code-style references.
+
+# Related
+
+- [rule:dict] – Notation System
+- [procedure:adr-creating] – How to create ADRs

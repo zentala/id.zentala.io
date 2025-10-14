@@ -1,0 +1,24 @@
+---
+description: Procedure for creating Architecture Decision Records (ADRs)
+alwaysApply: false
+---
+
+# Procedure: ADR Creating
+
+1. Choose next ADR number (e.g., 001) and create file `.cursor/decisions/adr-XXX.mdc`.
+2. Add YAML header with minimal metadata:
+   ```yaml
+   ---
+   adr: XXX
+   title: "Short, imperative title"
+   status: drafted # [drafted|accepted|rejected|superseded]
+   created: YYYY-MM-DD
+   supersedes: null
+   superseded_by: null
+   ---
+   ```
+3. Document Context, Decision, Consequences, Alternatives.
+4. Link related tasks `[task:NNN]` and rules `[rule:dict]` if applicable.
+5. When accepted, update `status: accepted` and cross-link if it supersedes/gets superseded.
+6. Run `pnpm run index:decisions` to refresh index.
+

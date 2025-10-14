@@ -12,8 +12,8 @@ This is the canonical source for #mind-theory and terminology. Keep it concise b
 - #term for ALL definitions and concepts across ALL documentation
 - == for synonyms/equivalents
 - -> for relationships (loads from, creates, updates, etc.)
-- Backticks are ONLY for code, commands, file paths, and technical references
-- NEVER use backticks for concepts or definitions
+- Use backticks together with hashtagged terms to denote explicit references to concepts (e.g., `#always`, `#mind-theory`).
+- Do not use backticks for plain prose concepts; reserve them for code/paths or hashtagged conceptual references.
 
 Example:
 ```markdown
