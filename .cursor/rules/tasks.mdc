@@ -43,7 +43,7 @@ resolution: string        # For done/deferred: [accepted|rejected|deferred|compl
 ### Required Fields
 - `name` – Descriptive task name
 - `number` – Unique 3-digit integer (001, 002, ...)
-- `status` – Current state [idea|backlog|task|wip|done|deferred]
+- `status` – Current state [idea|backlog|ready-to-do|task|wip|done|deferred]
 
 ### Recommended Fields
 - `type` – [feature|bugfix|refactor|chore|docs|test|style|perf]
@@ -57,17 +57,22 @@ Add fields as needed for your workflow.
 ## Procedures and Artifacts
 
 - Define tasks under `.cursor/tasks/` using the metadata above.
-- Follow `[procedure:task-defining]` to create tasks.
-- Follow `[procedure:task-achieving]` to complete tasks.
+- Follow `[procedure:task-defining]` to create tasks (see `./.cursor/procedures/task-defining.mdc`).
+- Follow `[procedure:task-achieving]` to complete tasks (see `./.cursor/procedures/task-achieving.mdc`).
 - Upon completion, generate a `#runbook` in `.cursor/runbooks/` for the task.
 - If a reusable insight emerges, extract a `#lesson` into `.cursor/lessons/` and cross-link.
 
 ### Execution Policy
 
 - Do not start work outside a `task-NNN.mdc`.
-- Refine the task until it is ready-to-do before execution.
-- Follow the appropriate procedure from `.cursor/procedures/` (see `./.cursor/procedures/README.md`).
+- Refine the task until it is `ready-to-do` before execution.
+- Use the specific procedures: `task-defining.mdc` for setup, `task-achieving.mdc` for execution.
 - Maintain a runbook during/after execution and keep task status up to date.
+
+### Interlinking Requirement
+
+- Always interlink artifacts using shortcodes: tasks ↔ procedures ↔ runbooks ↔ lessons.
+- Example: In task body, reference `[procedure:task-achieving]`; in runbook, reference `[task:NNN]` and any `[lesson:name]`.
 
 ## Indexing and Automation
 

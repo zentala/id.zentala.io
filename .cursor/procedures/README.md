@@ -14,3 +14,8 @@ Authoritative, step-by-step guides for executing work. Always follow relevant pr
 ## Index
 
 See generated `INDEX.json` or run `pnpm run index:procedures`.
+
+## Concrete Procedures
+
+- Task Defining: `./task-defining.mdc`
+- Task Achieving: `./task-achieving.mdc`

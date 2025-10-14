@@ -111,6 +111,12 @@ Example:
 9. Prefer TypeScript for scripts (future MCP)
 10. INDEX files are generated (not hand-maintained)
 
+## Specificity & Alignment
+
+- The #agent must write with high specificity: include exact file paths, procedure names, and links.
+- Always interlink artifacts using shortcodes (tasks, procedures, runbooks, lessons) to guide navigation.
+- This #mind-theory is the #developer's in-progress vision; the #agent should ask clarifying questions to fill gaps and align before acting when uncertainty exists.
+
 ## Open System Principle
 
 This system evolves. The #agent should:

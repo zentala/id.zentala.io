@@ -41,6 +41,23 @@ This procedure specifies how to create new tasks in `.cursor/tasks/` using the m
 6. Update status as you progress
    - `idea` → `backlog` → `task` → `wip` → `done`
 
+## Planning Phase (Commit Naming & Dependencies)
+
+7. Analyst alignment (with #developer)
+   - Confirm scope and acceptance criteria in the task body
+   - Identify external constraints and risks
+
+8. Scrum Master planning
+   - Decompose the task into smaller sub-tasks or steps
+   - Map dependencies between sub-tasks; ensure no missing prerequisites
+   - Establish execution order
+
+9. Tech Lead commit plan
+   - Propose commit messages for major steps using Conventional Commits
+   - Use `type` and `scope` from the task header when applicable (see `./.cursor/rules/tasks.mdc`)
+   - Examples: `feat(docs): add .cursor README`, `refactor(build): generalize indexer`
+   - Allow customization if needed, but prefer consistency when possible
+
 ## Task Metadata (Reference)
 
 See `./.cursor/rules/tasks.mdc` for the canonical fields and examples.
