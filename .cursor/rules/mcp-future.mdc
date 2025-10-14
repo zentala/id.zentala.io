@@ -1,0 +1,40 @@
+---
+description: Vision for MCP transition and TypeScript-based automation
+alwaysApply: false
+---
+
+# MCP Future (Vision)
+
+## Phase 1: TypeScript Scripts (Now)
+
+- Scripts in TypeScript for consistency and MCP readiness.
+- Place indexing scripts alongside their domains (rules/decisions/procedures/tasks/lessons).
+- Generate `INDEX.yaml` files from MDC headers.
+
+Example `package.json` scripts (to be added when scripts exist):
+
+```json
+{
+  "scripts": {
+    "index:rules": "tsx .cursor/rules/script.index.ts",
+    "index:decisions": "tsx .cursor/decisions/script.index.ts",
+    "index:procedures": "tsx .cursor/procedures/script.index.ts",
+    "index:tasks": "tsx .cursor/tasks/script.index.ts",
+    "index:lessons": "tsx .cursor/lessons/script.index.ts"
+  }
+}
+```
+
+### Task Scaffolding (Planned)
+
+- Add `"task:new": "tsx .cursor/scripts/new-task.ts"` to scaffold a new task.
+- Behavior: auto-increment `number`, inject `created` (ISO date), create `task-NNN.mdc` with minimal header.
+- Until then, use manual numbering and headers per `procedures/task-defining.mdc`.
+
+## Phase 2: MCP Server (Future)
+
+- Document design in this file as it evolves.
+- Build an MCP server incrementally in TypeScript.
+- Reuse shared types from `./.cursor/types/` (to be defined).
+- Migrate ad-hoc scripts into MCP tools over time.
+

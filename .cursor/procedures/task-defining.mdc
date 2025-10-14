@@ -1,0 +1,47 @@
+---
+description: Procedure for defining new tasks (skeleton, requires completion)
+alwaysApply: false
+---
+
+# Procedure: Task Defining
+
+This procedure specifies how to create new tasks in `.cursor/tasks/` using the minimal required metadata and linkages.
+
+## Task Creation Steps
+
+1. Choose next number
+   - Check `.cursor/tasks/` for highest number
+   - Increment by 1
+   - Use 3-digit format: 001, 002, etc.
+
+2. Create file
+   - Name: `task-NNN.mdc` where NNN is your number
+   - Location: `.cursor/tasks/task-NNN.mdc`
+
+3. Add minimal header
+   ```yaml
+   ---
+   name: "Descriptive task name"
+   number: NNN
+   status: idea
+   ---
+   ```
+
+4. Add recommended fields if known
+   ```yaml
+   type: feature          # or bugfix, refactor, etc.
+   created: 2025-10-14    # Today's date
+   ```
+
+5. Add body content
+   - Describe what needs to be done
+   - Link related items: `[adr:001]`, `[lesson:context-overload]`
+   - Add context files if needed
+
+6. Update status as you progress
+   - `idea` → `backlog` → `task` → `wip` → `done`
+
+## Task Metadata (Reference)
+
+See `./.cursor/rules/tasks.mdc` for the canonical fields and examples.
+

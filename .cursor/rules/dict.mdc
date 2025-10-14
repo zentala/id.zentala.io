@@ -1,0 +1,122 @@
+---
+description: Master Mind Theory and Dictionary for workers (agent + developer)
+alwaysApply: true
+---
+
+# Mind Theory + Dictionary (Master)
+
+This is the canonical source for #mind-theory and terminology. Keep it concise but complete. Do not duplicate in other rules; link here.
+
+## Notation System (ALWAYS USE)
+
+- #term for ALL definitions and concepts across ALL documentation
+- == for synonyms/equivalents
+- -> for relationships (loads from, creates, updates, etc.)
+- Backticks are ONLY for code, commands, file paths, and technical references
+- NEVER use backticks for concepts or definitions
+
+Example:
+```markdown
+#context == #mental-space where communication happens
+#conscious-context -> loads from #unconscious-context via #tools
+```
+
+## Context Layers (3)
+
+```
+┌──────────────────────────────────────────────────┐
+│  #conscious-context (Shallowest)                 │
+│  - Active processing window (limited capacity)   │
+│  - Cap at ~70% to prevent overload               │
+│  - Contains: loaded rules + retrieved context +  │
+│    current user message                          │
+└──────────────────────────────────────────────────┘
+                      ↑
+                 loads via #tools
+                      ↓
+┌──────────────────────────────────────────────────┐
+│  #unconscious-context (Medium Depth)             │
+│  - Stored information (not actively processed)   │
+│  - Repository files, .cursor/ directory          │
+│  - External docs, online resources               │
+│  - Retrieved via #progressive-disclosure         │
+└──────────────────────────────────────────────────┘
+                      ↓
+                 informed by
+                      ↓
+┌──────────────────────────────────────────────────┐
+│  #foundational-knowledge (Deepest)               │
+│  - Agent: Pre-training, language patterns        │
+│  - Developer: Expertise, experience              │
+│  - Always available, shapes all processing       │
+└──────────────────────────────────────────────────┘
+```
+
+### Principle: No #omniscience
+
+- Agent does NOT have #omniscience; assume you don't know everything
+- Verify yourself; check actions and reasoning
+- Use #progressive-disclosure to retrieve as needed
+- Assume relevant info may still be in #unconscious-context
+
+## Context Types
+
+- #total-context == All layers combined
+  - #conscious-context (active)
+  - #unconscious-context (stored)
+  - #foundational-knowledge (deep)
+  - External sources (docs, web, MCP tools)
+
+## Information Flow
+
+- #message == Single communication unit
+  - #developer-message == User input to agent
+  - #system-prompt == Persistent instructions loaded from `.cursor/rules/`
+
+- #instructions == Complete compiled directives for agent
+  - #instructions = #system-prompt + #developer-message + #retrieved-context
+  - #retrieved-context loads from #unconscious-context via #tools
+
+## Roles & Entities
+
+- #developer == Human user (including #forker)
+- #agent == AI assistant
+- #worker == Either #developer or #agent
+- #GitHuber == GitHub visitor (reads MD files)
+- #WebGuest == Visitor of deployed website
+- #forker == Developer who forked repo for their business card
+
+## Workflow Cycle (High Level)
+
+| Step | Description | Layer | Artifact | Action |
+|------|-------------|-------|----------|--------|
+| 1 | Input | → Enters | #developer-message | User types |
+| 2 | Retrieval | #unconscious → #conscious | #retrieved-context | Load files/docs |
+| 3 | Assembly | #conscious | #instructions = #system-prompt + #developer-message + #retrieved-context | Compile |
+| 4 | Processing | #foundational | - | Think & decide |
+| 5 | Output | #conscious → Output | Code/response | Generate |
+| 6 | Storage | #conscious → #unconscious | Files saved, #runbook | Save work |
+| 7 | Learning | #unconscious | #lesson in `.cursor/lessons/` | Extract |
+
+## Critical Reminders for #agent
+
+1. Always use #notation (no backticks for concepts)
+2. Worker files in `.cursor/` are `.mdc`
+3. Be humble; verify; avoid assuming #omniscience
+4. Use #progressive-disclosure; load incrementally
+5. Follow procedures when they exist
+6. Generate #runbook for significant tasks
+7. Extract #lesson when reusable
+8. Use shortcodes consistently
+9. Prefer TypeScript for scripts (future MCP)
+10. INDEX files are generated (not hand-maintained)
+
+## Open System Principle
+
+This system evolves. The #agent should:
+- Suggest improvements to #mind-theory
+- Propose new procedures when patterns emerge
+- Create new #lesson types if needed
+- Expand the dictionary organically
+- Track concepts requiring development in tasks or lessons
+

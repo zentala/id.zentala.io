@@ -1,0 +1,63 @@
+---
+description: Procedure for completing tasks end-to-end
+alwaysApply: false
+---
+
+# Procedure: Task Achieving
+
+Follow these steps whenever executing a task.
+
+1. Load task from `.cursor/tasks/task-NNN.mdc`.
+2. Retrieve necessary context (files, rules, lessons) via #progressive-disclosure.
+3. Perform the work (code/changes) guided by relevant rules.
+4. Update task status and outcome in the task file.
+5. Generate a #runbook in `.cursor/runbooks/task-NNN.mdc` (use the runbook structure below).
+6. If a reusable insight exists, extract a #lesson into `.cursor/lessons/[name].mdc` and link it.
+7. Link the extracted lesson back in the task file: `lessons_learned: [lesson:name]`.
+
+## Runbook Structure (Template)
+
+```markdown
+---
+task: [task:NNN]
+created: YYYY-MM-DD
+---
+
+# Runbook: Task NNN – [Task Name]
+
+## Objective
+- Original #developer-message / goal
+- Why this task exists
+
+## Context Loaded
+- What was retrieved from #unconscious-context
+- Files referenced: [file paths]
+- Rules applied: [rule:name]
+- Lessons consulted: [lesson:name]
+
+## Thought Process
+- Reasoning steps and alternatives
+- Why chosen approach was selected
+
+## Actions Taken
+- Specific steps executed
+- Commands run
+- Files modified
+- Code changes
+
+## Decisions & Rationale
+- Key choices made and trade-offs
+
+## Outcome
+- Success/failure and results
+
+## Lessons Learned
+- Mistakes to avoid; patterns that worked
+- If reusable: extract to [lesson:name] and link
+
+## Related
+- [lesson:XXX]
+- [task:YYY]
+- [adr:ZZZ]
+```
+

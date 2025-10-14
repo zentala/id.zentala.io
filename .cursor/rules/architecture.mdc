@@ -1,0 +1,120 @@
+---
+description: Project architecture, workflows, and conventions for Cursor agents and developers
+alwaysApply: true
+---
+
+# Architecture
+
+This rule describes the high-level architecture of the project, how to develop and deploy it, and key conventions. It is optimized for use inside Cursor. For editing rules and naming guidance, see `./.cursor/rules/cursor-rules.mdc`.
+
+## Project Overview
+
+- **Type**: Modern, minimalistic personal homepage (single-page)
+- **Stack**: SCSS, HTML5, JavaScript
+- **Build Tool**: Parcel.js v2
+- **Package Manager**: `pnpm` (hard requirement)
+- **Node Version**: 22+ (managed via `.nvmrc` when using `nvm`)
+
+Related context lives in `./.cursor/rules/context.mdc` and terminology is defined in `./.cursor/rules/dictionary.mdc`.
+
+## Repository Structure
+
+```
+src/
+├── index.html           # Single-page entry point
+├── index.js             # Main JavaScript entry
+├── js/                  # JavaScript modules
+├── scss/                # SCSS stylesheets (modular)
+│   ├── index.scss       # Main SCSS entry (imports all modules)
+│   ├── _reset.scss      # CSS reset
+│   ├── _variables.scss  # SCSS variables
+│   ├── _functions.scss  # SCSS functions
+│   ├── _typography.scss # Typography styles
+│   ├── _colors.scss     # Color definitions
+│   ├── _helpers.scss    # Helper classes
+│   ├── _general.scss    # General styles
+│   ├── _grid.scss       # Grid system
+│   ├── _buttons.scss    # Button styles
+│   ├── _hello-world.scss    # Homepage-specific styles
+│   ├── _video-hero.scss     # Video background component
+│   └── _social-media.scss   # Social media links
+└── img/                 # Images and videos
+```
+
+## SCSS Architecture
+
+Modular partials pattern. The `scss/index.scss` entry composes all modules using `@use` in this order:
+1. Framework modules: `_reset.scss`, `_variables.scss`, `_functions.scss`, `_typography.scss`, `_colors.scss`, `_helpers.scss`, `_general.scss`, `_grid.scss`, `_buttons.scss`
+2. Page-specific modules: `_hello-world.scss`, `_video-hero.scss`, `_social-media.scss`
+
+Guidelines:
+- Keep selectors flat and components encapsulated.
+- Prefer variables and functions over hard-coded values.
+- Co-locate component styles within the SCSS partials listed above.
+
+## Development
+
+Commands:
+
+```bash
+pnpm run dev
+```
+
+- Starts the Parcel dev server on `http://localhost:2000/` with HMR.
+- Outputs to `deploy/` during development.
+
+Bootstrap helpers in `scripts/ensure-node-and-deps.ps1` and `scripts/ensure-node-and-deps.sh`:
+- Validate Node installation.
+- Attempt `nvm use` (if available) based on `.nvmrc`.
+- Install dependencies (CI-friendly) and start dev server.
+
+## Deployment
+
+- **Source Branch**: `main` (development)
+- **Deploy Branch**: `deploy` (GitHub Pages serves from this)
+- **Domain**: Custom domain via `CNAME` (e.g., `id.zentala.io`)
+- **Build Output**: `deploy/` directory
+
+One-shot deployment:
+
+```bash
+pnpm run deploy
+```
+
+This executes:
+1. `deploy:clean` – remove `deploy/`
+2. `deploy:build` – production build via Parcel
+3. `deploy:setup` – write `CNAME` with domain
+4. `deploy:push` – push `deploy/` to `deploy` branch via `gh-pages`
+
+Individual steps are also available as separate scripts.
+
+Post-first-deploy setup on GitHub:
+1. Open repository Settings → Pages
+2. Select `deploy` branch as the source
+3. Wait ~15 minutes for TLS cert generation
+4. Enable “Enforce HTTPS”
+
+## Conventions and Requirements
+
+- Always use `pnpm` (never `npm`).
+- Keep `src/index.html` as the single entry point; avoid multi-page drift.
+- Video hero uses a background video with an image fallback poster.
+- Responsive layout via custom grid and breakpoints.
+- FontAwesome icons are used for social links.
+- Google Analytics `gtag.js` is integrated.
+
+## Domain Forking and Adaptation
+
+When forking/adapting for a new domain:
+1. Update `package.json` → scripts → `deploy:setup` to emit the new domain in `CNAME`.
+2. Configure DNS `CNAME` to point to `<username>.github.io.`
+3. Update any README badges/links referencing repository URLs.
+
+See additional forking guidance in `./.cursor/rules/forking.mdc`.
+
+## Notes for Agents
+
+- Treat this rule as high-signal context. Avoid repeating it in other rules; link here instead.
+- Respect the package manager constraint and Node version in tool invocations.
+
