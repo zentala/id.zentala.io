@@ -68,6 +68,7 @@ Add fields as needed for your workflow.
 - Refine the task until it is `ready-to-do` before execution.
 - Use the specific procedures: `task-defining.mdc` for setup, `task-achieving.mdc` for execution.
 - Maintain a runbook during/after execution and keep task status up to date.
+  - Runbook jest obowiązkowy dla wszystkich zadań, w tym konfiguracji/porządków (zob. `./.cursor/procedures/task-achieving.mdc`).
 
 ### Interlinking Requirement
 

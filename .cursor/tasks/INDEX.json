@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2025-10-14T15:51:13.132Z",
+  "count": 9,
+  "entries": [
+    {
+      "file": ".cursor\\tasks\\task-001.mdc",
+      "header": {
+        "name": "Create package.json with index scripts",
+        "number": 1,
+        "status": "done",
+        "type": "chore",
+        "created": "2025-10-14"
+      }
+    },
+    {
+      "file": ".cursor\\tasks\\task-002.mdc",
+      "header": {
+        "name": "Test task create index scripts",
+        "number": 2,
+        "status": "done",
+        "type": "chore",
+        "created": "2025-10-14"
+      }
+    },
+    {
+      "file": ".cursor\\tasks\\task-003.mdc",
+      "header": {
+        "name": "Write .cursor/README.md with structure, scripts, vision",
+        "number": 3,
+        "status": "backlog",
+        "type": "docs",
+        "created": "2025-10-14"
+      }
+    },
+    {
+      "file": ".cursor\\tasks\\task-004.mdc",
+      "header": {
+        "name": "Add TS types for MDC headers (tasks/rules/procedures/lessons)",
+        "number": 4,
+        "status": "backlog",
+        "type": "chore",
+        "created": "2025-10-14"
+      }
+    },
+    {
+      "file": ".cursor\\tasks\\task-005.mdc",
+      "header": {
+        "name": "Add CI job to run index:all and validate headers",
+        "number": 5,
+        "status": "backlog",
+        "type": "chore",
+        "created": "2025-10-14"
+      }
+    },
+    {
+      "file": ".cursor\\tasks\\task-006.mdc",
+      "header": {
+        "name": "Establish ADR process and example adr-001.mdc",
+        "number": 6,
+        "status": "backlog",
+        "type": "docs",
+        "created": "2025-10-14"
+      }
+    },
+    {
+      "file": ".cursor\\tasks\\task-007.mdc",
+      "header": {
+        "name": "Add templates: task, runbook, lesson (copyable blocks)",
+        "number": 7,
+        "status": "backlog",
+        "type": "docs",
+        "created": "2025-10-14"
+      }
+    },
+    {
+      "file": ".cursor\\tasks\\task-008.mdc",
+      "header": {
+        "name": "Add validator: index:check and CI workflow",
+        "number": 8,
+        "status": "backlog",
+        "type": "chore",
+        "created": "2025-10-14"
+      }
+    },
+    {
+      "file": ".cursor\\tasks\\task-009.mdc",
+      "header": {
+        "name": "Add templates: task/runbook/lesson and support --template in task:new",
+        "number": 9,
+        "status": "backlog",
+        "type": "docs",
+        "created": "2025-10-14"
+      }
+    }
+  ]
+}

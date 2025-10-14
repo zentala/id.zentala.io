@@ -1,8 +1,10 @@
 ---
 name: "Test task create index scripts"
 number: 002
-status: backlog
+status: done
 type: chore
 created: 2025-10-14
 ---
 Describe the task, related items, and context here.
+
+Runbook: `./.cursor/runbooks/task-002.mdc`

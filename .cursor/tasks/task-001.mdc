@@ -1,9 +1,11 @@
 ---
 name: "Create package.json with index scripts"
 number: 001
-status: backlog
+status: done
 type: chore
 created: 2025-10-14
 ---
 
 Describe and implement package.json scripts for indexing (rules/decisions/procedures/tasks/lessons) as outlined in `./.cursor/rules/mcp-future.mdc`.
+
+Runbook: `./.cursor/runbooks/task-001.mdc`

@@ -61,3 +61,17 @@ created: YYYY-MM-DD
 - [adr:ZZZ]
 ```
 
+## QA Checklist (Before Marking Done)
+
+- Code builds locally without errors (if applicable)
+- Lints/tests (if present) pass
+- Files changed are minimal and scoped
+- Naming and formatting follow repository standards
+- Updated related documentation where needed (rules/procedures/README)
+- Cross-links added (task ↔ runbook ↔ lesson)
+- Any decisions noted or captured as ADR if significant
+
+## Runbooks Policy
+
+- Runbook jest wymagany dla KAŻDEGO zadania, także dla prac konfiguracyjnych i porządkowych.
+
