@@ -1,0 +1,38 @@
+---
+task: [task:001]
+created: 2025-10-14
+---
+
+# Runbook: Task 001 – Create package.json with index scripts
+
+## Objective
+- Dodać skrypty indeksujące (`index:*`) do `package.json` oraz przygotować infrastrukturę do generowania indeksów `.cursor/*`.
+
+## Context Loaded
+- Rules: `./.cursor/rules/tasks.mdc`, `./.cursor/rules/mcp-future.mdc`
+- Procedures: `./.cursor/procedures/task-achieving.mdc`
+- Files: `package.json`, `.cursor/scripts/index.ts`
+
+## Thought Process
+- Jednolity indeksator pozwala uniknąć duplikacji skryptów.
+- JSON index zamiast YAML dla prostoty narzędzi i CI.
+
+## Actions Taken
+- Dodano `./.cursor/scripts/index.ts` (ogólny indeksator).
+- Zaktualizowano `package.json` o skrypty: `index:tasks`, `index:rules`, `index:procedures`, `index:lessons`, `index:decisions`, `index:all`.
+- Zainstalowano `yaml` (parser) i `tsx` (uruchamianie TS).
+- Wygenerowano indeksy i zweryfikowano ich zawartość.
+
+## Decisions & Rationale
+- Użycie TS i `tsx` dla łatwego uruchamiania bez builda.
+- Sortowanie po `number` w tasks dla naturalnej kolejności.
+
+## Outcome
+- Indeksy generują się poprawnie dla wszystkich katalogów `.cursor/*`.
+
+## Lessons Learned
+- Wspólny skrypt ułatwia przyszłe walidacje i CI.
+
+## Related
+- [task:002]
+- [rule:mcp-future]

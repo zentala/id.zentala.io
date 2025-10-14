@@ -1,0 +1,34 @@
+---
+task: [task:002]
+created: 2025-10-14
+---
+
+# Runbook: Task 002 – Test task create index scripts
+
+## Objective
+- Zweryfikować działanie skryptu `task:new` oraz wygenerować przykładowe zadanie i indeks.
+
+## Context Loaded
+- Rules: `./.cursor/rules/tasks.mdc`
+- Procedures: `./.cursor/procedures/task-achieving.mdc`
+- Files: `.cursor/scripts/new-task.ts`, `.cursor/tasks/`
+
+## Thought Process
+- Test end-to-end: utworzenie zadania i jego obecność w `INDEX.json`.
+
+## Actions Taken
+- Uruchomiono `pnpm run task:new -- --name 'Test task create index scripts' --type chore --status backlog`.
+- Zweryfikowano powstanie `./.cursor/tasks/task-002.mdc`.
+- Uruchomiono `pnpm run index:tasks` i sprawdzono `./.cursor/tasks/INDEX.json`.
+
+## Decisions & Rationale
+- Minimalny nagłówek i domyślne wartości wystarczają do podstawowego przepływu.
+
+## Outcome
+- Skrypt `task:new` działa poprawnie i generuje kolejne numery zadań.
+
+## Lessons Learned
+- Warto rozbudować o opcję `--template` w przyszłości.
+
+## Related
+- [task:001]
