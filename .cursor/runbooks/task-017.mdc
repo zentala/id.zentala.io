@@ -1,0 +1,17 @@
+---
+task: [task:017]
+created: 2025-10-14
+---
+
+# Runbook: Task 017 – Set up Vitest for .cursor/scripts
+
+## Objective
+- Provide a lightweight test runner for CLI scripts.
+
+## Actions Taken
+- Added `vitest` dev dependency and `vitest.config.ts`.
+- Added scripts: `test`, `test:watch` in `package.json`.
+- CI updated to run tests.
+
+## Outcome
+- Ready to add spec files next to scripts.

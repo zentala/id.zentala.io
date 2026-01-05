@@ -1,0 +1,20 @@
+---
+task: [task:015]
+created: 2025-10-14
+---
+
+# Runbook: Task 015 – Enforce validation gate in rules and CI
+
+## Objective
+- Require index+validation before moving to ready-to-do or execution and enforce via CI.
+
+## Context Loaded
+- Rules: `./.cursor/rules/tasks.mdc`, `./.cursor/procedures/task-defining.mdc`, `./.cursor/procedures/task-achieving.mdc`
+- CI: `.github/workflows/validate.yml`
+
+## Actions Taken
+- Added Validation Gate to tasks rules and DoR steps to procedures.
+- Added GitHub Actions workflow to run index and validation.
+
+## Outcome
+- Local and CI validation block low-quality tasks.

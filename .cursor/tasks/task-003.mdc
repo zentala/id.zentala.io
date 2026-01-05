@@ -1,0 +1,15 @@
+---
+name: "Write .cursor/README.md with structure, scripts, vision"
+number: 003
+status: backlog
+type: docs
+created: 2025-10-14
+---
+Problem: Missing concise README for `.cursor` to onboard new contributors.
+Business value: Faster onboarding and consistent usage of rules/procedures.
+Acceptance criteria:
+- README explains folder purposes, key scripts, how to run indexes/validate
+- Links to `rules/`, `procedures/`, `tasks/`, and MCP vision
+- Uses shortcodes for internal references
+Scope: Author README only (no new scripts).
+References: [procedure:task-defining], [procedure:task-achieving]

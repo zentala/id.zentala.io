@@ -8,28 +8,33 @@ alwaysApply: false
 ## Phase 1: TypeScript Scripts (Now)
 
 - Scripts in TypeScript for consistency and MCP readiness.
-- Place indexing scripts alongside their domains (rules/decisions/procedures/tasks/lessons).
-- Generate `INDEX.yaml` files from MDC headers.
+- Use a central indexer script at `./.cursor/scripts/index.ts` to generate index files.
+- Generate `INDEX.json` files from MDC headers (JSON is the canonical index format).
 
-Example `package.json` scripts (to be added when scripts exist):
+Example `package.json` scripts:
 
 ```json
 {
   "scripts": {
-    "index:rules": "tsx .cursor/rules/script.index.ts",
-    "index:decisions": "tsx .cursor/decisions/script.index.ts",
-    "index:procedures": "tsx .cursor/procedures/script.index.ts",
-    "index:tasks": "tsx .cursor/tasks/script.index.ts",
-    "index:lessons": "tsx .cursor/lessons/script.index.ts"
+    "index:rules": "tsx ./.cursor/scripts/index.ts rules",
+    "index:decisions": "tsx ./.cursor/scripts/index.ts decisions",
+    "index:procedures": "tsx ./.cursor/scripts/index.ts procedures",
+    "index:tasks": "tsx ./.cursor/scripts/index.ts tasks",
+    "index:lessons": "tsx ./.cursor/scripts/index.ts lessons",
+    "index:all": "tsx ./.cursor/scripts/index.ts all"
   }
 }
 ```
 
-### Task Scaffolding (Planned)
+### Task Scaffolding
 
-- Add `"task:new": "tsx .cursor/scripts/new-task.ts"` to scaffold a new task.
+- `"task:new": "tsx ./.cursor/scripts/new-task.ts"` scaffolds a new task.
 - Behavior: auto-increment `number`, inject `created` (ISO date), create `task-NNN.mdc` with minimal header.
-- Until then, use manual numbering and headers per `procedures/task-defining.mdc`.
+
+### Validation
+
+- Provide runtime validation of index files and headers using TypeScript types from `./.cursor/types/`.
+- No CI enforcement initially; validation can be run on demand or as part of future tasks.
 
 ## Phase 2: MCP Server (Future)
 
@@ -38,3 +43,6 @@ Example `package.json` scripts (to be added when scripts exist):
 - Reuse shared types from `./.cursor/types/` (to be defined).
 - Migrate ad-hoc scripts into MCP tools over time.
 
+## Imepent ideas from user:
+
+- when getting stuff from index agent should be able to get max last 50, or there should be limits, eg all lessons, but only 50 last rubbooks or tasks, but he can change to get more, he should be also to filer what tags are provided and what no (for bigger amount of data this filtering will help) + filtering by any metadata key, eg done

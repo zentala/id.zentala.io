@@ -1,0 +1,28 @@
+---
+alwaysApply: true
+---
+
+<purpose>
+jezyk kodowy używany do komunikacji `#worker`ami
+</purpose
+
+<citing_code>
+You can cite code via the format:
+
+```startLine:endLine:filepath
+// ... existing code ...
+```
+</citing_code>
+
+<shortcodes>
+described in [scripts.mdc](./scripts.mdc)
+[script:codelang:index]
+[script:codelang:search]
+[script:codelang:validate]
+</shortcodes>
+
+<terms>
+described in [dict.mdc](./dict.mdc)
+#term == #definition
+</terms>
+

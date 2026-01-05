@@ -1,0 +1,15 @@
+---
+name: "Write tests: resolve.spec.ts (args, happy path, no matches)"
+number: 018
+status: ready-to-do
+type: test
+created: 2025-10-14
+---
+
+Problem: Resolver CLI untested; regression risk.
+Business value: Confidence in navigation tooling.
+Acceptance criteria:
+- Tests cover: positional and flag args; task id and rule name; no matches
+- Mocks or temp dirs for index reading
+Scope: Test file next to script: `.cursor/scripts/resolve.spec.ts`.
+References: [task:017]

@@ -1,0 +1,35 @@
+name: Validate indexes and tasks
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: |
+          corepack enable
+          npm ci
+
+      - name: Generate indexes
+        run: npm run index:all
+
+      - name: Validate indexes and tasks
+        run: npm run validate:indexes
+
+      - name: Run unit tests (Vitest)
+        run: npm test
+
+

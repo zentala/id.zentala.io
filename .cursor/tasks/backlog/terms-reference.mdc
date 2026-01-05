@@ -1,0 +1,17 @@
+---
+alwaysApply: false
+---
+
+potrzbujemy skrytpu ktory bedzie wyszukiwal definicje #terms w calym projekcie, oraz w specyczidncyh kindach (tasks, rules, decsions, etc)
+
+and return lines with usage of those terms as json, eg.
+```
+{"path/to/file.mdc": {"<line-numner>", "line content"}}
+```
+
+and implemnt it do rules, that we have this script and how to use them.
+i would crrate rule scripts.mdc as always apply i tam zorbil liste scripts and what they provide  and what is their codename, eg [script:decisions:index] or [scripts:search:term]<{term}, {scope>}> np [scripts:search:term]<runbooks, rules>
+
+wtredy wiemy n podstaiw escripts mdc co odpalic. woczas zmiana w scipts mdc pozwoli podmieic skeypt ts na MCP tools, bez zmiany shorcodes in rest of docs.
+
+zaproponuj lepsza nomenaklue shocodow kompatymilna z tym co juz mamy, jakiej juz ywzamy

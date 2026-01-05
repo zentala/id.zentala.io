@@ -7,6 +7,8 @@ alwaysApply: true
 
 ## Shortcode Syntax
 
+Use it as interlinking between `#tasks`, `#procedures`, `#runbooks`, `#lessons`, `#decisions` (ADR) instead of providing paths.
+
 Format: `[relation:type:identifier]` or `[type:identifier]` when relation is implied
 
 Examples:
@@ -16,6 +18,21 @@ Examples:
 - `[procedure:task-achieving]` – reference to procedure
 - `used_in:[task:005, content:tooltips]` – used in multiple places
 - `depends_on:[adr:001, task:003]` – dependencies
+
+### `#resolver` CLI (`#shortcode` resolution)
+
+Use the `#resolver` to map `#shortcode`s to file paths (requires up-to-date `#index`es):
+
+- Generate indexes first (if needed): `npm run index:all`
+- Resolve by positional args:
+  - `npm run resolve -- tasks 010` → `.cursor/tasks/task-010.mdc`
+- Resolve by flags:
+  - `npm run resolve -- --kind tasks --id 010`
+  - `npm run resolve -- --kind rules --id mcp-future`
+
+Notes:
+- For `#tasks`, `010` maps to `task-010.mdc`. You can also use `task:010`.
+- For other kinds, `#resolver` matches by filename or `name` in the header.
 
 ## Task Metadata (MDC Header)
 
@@ -54,31 +71,57 @@ resolution: string        # For done/deferred: [accepted|rejected|deferred|compl
 
 Add fields as needed for your workflow.
 
+## From `#creator`
+
+every `#task` must go via stages:
+- `#idea` (from `#developer` or `#agent`)
+- `#backlog` – created and filled; architects and scrum masters prepare/refine, then move to `#ready-to-do`, then `#wip` when working, then next. The `#refinement` process is critical.
+- Always follow the `#task` planning and `#refinement` process; do not bypass `#procedures` or `#status` transitions.
+- Act automatically, following `#procedures` and transitioning `#status` of `#tasks` correctly.
+- Structure `#creator` inputs into your instructions.
+
+## `#DoR` – Definition of Ready
+
+A `#task` is considered defined and `#ready-to-do` ONLY when all of the following are true:
+
+- `#problem` statement: clear, unambiguous, written for mid-level devs unfamiliar with the repo.
+- `#business-value`: one or two sentences of why this matters.
+- `#acceptance-criteria`: concrete, testable outcomes (bullet list).
+- `#scope` boundaries: what is in/out; explicit constraints and dependencies.
+- `#references`: `#shortcode`s to related rules/procedures/lessons/ADRs.
+- `#commit-plan`: proposed high-level commits (Conventional Commits style) or steps.
+
+`#placeholders` such as "Describe the task, related items, and context here." are FORBIDDEN. `#tasks` containing `#placeholders` MUST NOT be moved to `#ready-to-do` or executed.
+
 ## Procedures and Artifacts
 
 - Define tasks under `.cursor/tasks/` using the metadata above.
 - Follow `[procedure:task-defining]` to create tasks (see `./.cursor/procedures/task-defining.mdc`).
 - Follow `[procedure:task-achieving]` to complete tasks (see `./.cursor/procedures/task-achieving.mdc`).
-- Upon completion, generate a `#runbook` in `.cursor/runbooks/` for the task.
+- Runbook is required only for significant tasks; trivial chores may omit runbook but should still update status and key notes.
 - If a reusable insight emerges, extract a `#lesson` into `.cursor/lessons/` and cross-link.
 
 ### Execution Policy
 
 - Do not start work outside a `task-NNN.mdc`.
-- Refine the task until it is `ready-to-do` (according to `[procedure:task-defining]`) before execution.
-- Use the specific procedures: `task-defining.mdc` for setup, `task-achieving.mdc` for execution.
-- Maintain a runbook during/after execution and keep task status up to date.
-  - Runbook jest obowiązkowy dla wszystkich zadań, w tym konfiguracji/porządków (zob. `./.cursor/procedures/task-achieving.mdc`).
-  - Po wykonaniu zaktualizuj treść taska (finalny zakres, lista zmian w zakresie) i dodaj `modified` (ISO data).
+- Refine the `#task` until it is `#ready-to-do` (according to `[procedure:task-defining]`) before execution.
+- Use the specific `#procedures`: `task-defining.mdc` for setup, `task-achieving.mdc` for execution.
+- Maintain a `#runbook` during/after execution for significant `#tasks` and keep `#status` up to date.
+- After completion, update the `#task` body (final `#scope`, list of changes) and add `modified` (ISO date).
+
+### `#validation-gate`
+
+- Moving a `#task` into `#ready-to-do` or starting execution requires passing validation:
+  - `pnpm run index:all` (or `npm run index:all`) and `npm run validate:indexes` must succeed locally.
+  - Validation fails if the task contains placeholder text or lacks required sections (Problem, Business value, Acceptance criteria, Scope).
 
 ### Interlinking Requirement
 
-- Always interlink artifacts using shortcodes: #tasks ↔ #procedures ↔ #runbooks ↔ #lessons.
+- Always interlink artifacts using `#shortcode`s: `#tasks` ↔ `#procedures` ↔ `#runbooks` ↔ `#lessons`.
 - Example: In task body, reference `[procedure:task-achieving]`; in runbook, reference `[task:NNN]` and any `[lesson:name]`.
 
 ## Indexing and Automation
 
-- INDEX files (e.g., `INDEX.yaml`) should be generated by scripts, not hand-maintained.
-   - those `INDEX.yaml` files should be used by agent to get ovierview whenever needed
-- See `./.cursor/rules/mcp-future.mdc` for indexing script vision using TypeScript.
+- INDEX files (e.g., `INDEX.json`) are generated by scripts, not hand-maintained, and used by the agent for overview.
+- See `./.cursor/rules/mcp-future.mdc` for the indexing script vision using TypeScript.
 

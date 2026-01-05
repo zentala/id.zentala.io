@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2025-10-14T14:45:27.664Z",
+  "count": 8,
+  "entries": [
+    {
+      "file": ".cursor\\rules\\architecture.mdc",
+      "header": {
+        "description": "Project architecture, workflows, and conventions for Cursor agents and developers",
+        "alwaysApply": true
+      }
+    },
+    {
+      "file": ".cursor\\rules\\context.mdc",
+      "header": {
+        "alwaysApply": true
+      }
+    },
+    {
+      "file": ".cursor\\rules\\cursor-rules.mdc",
+      "header": {
+        "description": "How to add or edit Cursor rules in our project",
+        "globs": null,
+        "alwaysApply": false
+      }
+    },
+    {
+      "file": ".cursor\\rules\\dict.mdc",
+      "header": {
+        "description": "Master Mind Theory and Dictionary for workers (agent + developer)",
+        "alwaysApply": true
+      }
+    },
+    {
+      "file": ".cursor\\rules\\dictionary.mdc",
+      "header": {
+        "alwaysApply": true
+      }
+    },
+    {
+      "file": ".cursor\\rules\\forking.mdc",
+      "header": {
+        "description": "when asked for content customization",
+        "alwaysApply": false
+      }
+    },
+    {
+      "file": ".cursor\\rules\\mcp-future.mdc",
+      "header": {
+        "description": "Vision for MCP transition and TypeScript-based automation",
+        "alwaysApply": false
+      }
+    },
+    {
+      "file": ".cursor\\rules\\tasks.mdc",
+      "header": {
+        "description": "Rules about tasks, metadata, and linkages to procedures/runbooks/lessons",
+        "alwaysApply": true
+      }
+    }
+  ]
+}

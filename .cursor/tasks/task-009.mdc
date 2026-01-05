@@ -1,0 +1,14 @@
+---
+name: "Add templates: task/runbook/lesson and support --template in task:new"
+number: 009
+status: backlog
+type: docs
+created: 2025-10-14
+---
+Problem: Scaffolder lacks template support for consistent bodies.
+Business value: Faster, compliant task creation without placeholders.
+Acceptance criteria:
+- `task:new` accepts `--template <name>` (future) and inserts body from `content/templates`
+- Document available templates and usage
+Scope: Documentation of future CLI change; implementation may be separate.
+References: [procedure:task-defining]

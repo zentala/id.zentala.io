@@ -1,0 +1,16 @@
+---
+name: "Add scripts catalog rule and search-terms CLI"
+number: 020
+status: ready-to-do
+type: docs
+created: 2025-10-14
+---
+
+Problem: Hard to discover and reference available scripts.
+Business value: Consistent usage via shortcodes and easier maintenance.
+Acceptance criteria:
+- `./.cursor/rules/scripts.mdc` documents scripts and [script:*] shortcodes
+- `./.cursor/scripts/search-terms.ts` implemented and wired as `npm run search:terms`
+- Examples provided in rules
+Scope: Docs + one CLI utility.
+References: [rule:scripts], [script:search:terms]

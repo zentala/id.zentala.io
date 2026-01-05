@@ -97,12 +97,17 @@ Post-first-deploy setup on GitHub:
 
 ## Conventions and Requirements
 
-- Always use `pnpm` (never `npm`).
+- Package manager: prefer `pnpm`, but not enforced.
 - Keep `src/index.html` as the single entry point; avoid multi-page drift.
 - Video hero uses a background video with an image fallback poster.
 - Responsive layout via custom grid and breakpoints.
 - FontAwesome icons are used for social links.
 - Google Analytics `gtag.js` is integrated.
+
+## Language Policy for Rules
+
+- Author `.cursor` rules/procedures in English.
+- User communication may be in the user's language, but repository artifacts should remain in English for consistency.
 
 ## Domain Forking and Adaptation
 
@@ -117,4 +122,11 @@ See additional forking guidance in `./.cursor/rules/forking.mdc`.
 
 - Treat this rule as high-signal context. Avoid repeating it in other rules; link here instead.
 - Respect the package manager constraint and Node version in tool invocations.
+
+## CLI Testing Policy
+
+- All Node CLI scripts under `.cursor/scripts/` MUST be covered by strong tests.
+- Co-locate tests next to scripts using `.spec.ts` naming, e.g., `resolve.ts` → `resolve.spec.ts`.
+- Minimum: argument parsing, happy path, and error cases.
+- Prefer lightweight test runners (e.g., Vitest/Jest) with `tsx` for execution without build.
 

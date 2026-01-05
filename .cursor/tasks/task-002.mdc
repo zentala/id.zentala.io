@@ -5,6 +5,13 @@ status: done
 type: chore
 created: 2025-10-14
 ---
-Describe the task, related items, and context here.
+Problem: Ensure index scripts exist and generate stable JSON across `.cursor/*`.
+Business value: Fast navigation and automation over repo knowledge artifacts.
+Acceptance criteria:
+- Scripts `index:*` exist in `package.json` and run without errors
+- `INDEX.json` files generated with `kind`, `generatedAt`, `count`, `entries`
+- Entries include `file` and parsed header
+Scope: Implement scripts and verify outputs; CI optional.
+References: [procedure:task-achieving], [rule:mcp-future]
 
 Runbook: `./.cursor/runbooks/task-002.mdc`

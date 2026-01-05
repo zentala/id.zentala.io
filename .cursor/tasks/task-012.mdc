@@ -1,0 +1,13 @@
+---
+name: "Unify tasks rules and scaffolder defaults (ready-to-do default)"
+number: 012
+status: ready-to-do
+type: docs
+created: 2025-10-14
+---
+
+- Ensure `ready-to-do` is enforced in rules and default in scaffolder.
+- Update `./.cursor/scripts/new-task.ts` default status to `ready-to-do`.
+- Acceptance: new tasks scaffold with `ready-to-do`; rules reflect the policy.
+
+Refs: [procedure:task-defining], [procedure:task-achieving]

@@ -5,7 +5,7 @@ alwaysApply: false
 
 # Procedure: Task Defining
 
-This procedure specifies how to create new tasks in `.cursor/tasks/` using the minimal required metadata and linkages.
+This procedure specifies how to create new tasks in `.cursor/tasks/` using the required metadata and linkages, and how to reach `ready-to-do` according to the Definition of Ready (DoR).
 
 ## Task Creation Steps
 
@@ -18,7 +18,7 @@ This procedure specifies how to create new tasks in `.cursor/tasks/` using the m
    - Name: `task-NNN.mdc` where NNN is your number
    - Location: `.cursor/tasks/task-NNN.mdc`
 
-3. Add minimal header
+3. Add required header
    ```yaml
    ---
    name: "Descriptive task name"
@@ -33,13 +33,19 @@ This procedure specifies how to create new tasks in `.cursor/tasks/` using the m
    created: 2025-10-14    # Today's date
    ```
 
-5. Add body content
-   - Describe what needs to be done
-   - Link related items: `[adr:001]`, `[lesson:context-overload]`
-   - Add context files if needed
+5. Add body content (NO PLACEHOLDERS)
+- Problem statement and business value (for mid-level devs new to the repo)
+- Acceptance criteria (bullet list, testable)
+- Scope boundaries and dependencies
+- References via shortcodes: `[adr:001]`, `[lesson:context-overload]`, `[procedure:task-achieving]`
+- Optional: commit plan (Conventional Commits outline)
 
 6. Update status as you progress
-   - `idea` → `backlog` → `task` → `wip` → `done`
+- `idea` → `backlog` → `ready-to-do` → `task` → `wip` → `done`
+
+7. DoR Checklist (must be satisfied before `ready-to-do`)
+- Problem, value, acceptance criteria, scope, dependencies, references, commit plan present
+- No placeholder text like "Describe the task..."
 
 ## Planning Phase (Commit Naming & Dependencies)
 

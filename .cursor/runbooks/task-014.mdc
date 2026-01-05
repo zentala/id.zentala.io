@@ -1,0 +1,20 @@
+---
+task: [task:014]
+created: 2025-10-14
+---
+
+# Runbook: Task 014 – Implement shortcode resolver CLI
+
+## Objective
+- Provide CLI to resolve shortcodes to file paths.
+
+## Context Loaded
+- Scripts: `./.cursor/scripts/index.ts`, `./.cursor/scripts/resolve.ts`
+- Rules: `./.cursor/rules/tasks.mdc`, `./.cursor/rules/mcp-future.mdc`
+
+## Actions Taken
+- Implemented `resolve.ts` with flags and positional fallback.
+- Wired `npm run resolve` in `package.json`.
+
+## Outcome
+- Resolves tasks by numeric id and other kinds by basename/header.

@@ -8,6 +8,7 @@ type NewTaskOptions = {
   type?: string;
   status?: string;
   created?: string;
+  desc: string;
 };
 
 async function ensureDir(dirPath: string): Promise<void> {
@@ -40,7 +41,7 @@ function todayISO(): string {
 
 function buildHeader(opts: NewTaskOptions, number: number): string {
   const created = opts.created ?? todayISO();
-  const status = opts.status ?? 'backlog';
+  const status = opts.status ?? 'ready-to-do';
   const type = opts.type ?? 'chore';
   return [
     '---',
@@ -63,7 +64,15 @@ async function createTask(opts: NewTaskOptions): Promise<string> {
   const filePath = path.join(tasksDir, fileName);
 
   const header = buildHeader(opts, num);
-  const body = 'Describe the task, related items, and context here.';
+  const body = [
+    `Problem: ${opts.desc}`,
+    'Business value: ',
+    'Acceptance criteria:',
+    '- ',
+    'Scope: ',
+    'References: [procedure:task-defining], [procedure:task-achieving]',
+    '',
+  ].join('\n');
   await fs.writeFile(filePath, `${header}${body}\n`, { encoding: 'utf8' });
   return filePath;
 }
@@ -74,6 +83,7 @@ function parseArgs(argv: string[]): NewTaskOptions {
   let type: string | undefined;
   let status: string | undefined;
   let created: string | undefined;
+  let desc = '';
 
   for (let i = 0; i < args.length; i++) {
     const a = args[i];
@@ -85,6 +95,8 @@ function parseArgs(argv: string[]): NewTaskOptions {
       status = args[++i];
     } else if (a === '--created' && args[i + 1]) {
       created = args[++i];
+    } else if ((a === '--desc' || a === '-d') && args[i + 1]) {
+      desc = args[++i];
     }
   }
 
@@ -92,7 +104,11 @@ function parseArgs(argv: string[]): NewTaskOptions {
     console.error('Error: --name "Task title" is required');
     process.exit(1);
   }
-  return { name, type, status, created };
+  if (!desc) {
+    console.error('Error: --desc "Short problem statement" is required');
+    process.exit(1);
+  }
+  return { name, type, status, created, desc };
 }
 
 async function main() {

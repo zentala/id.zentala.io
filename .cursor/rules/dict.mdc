@@ -5,15 +5,15 @@ alwaysApply: true
 
 # Mind Theory + Dictionary (Master)
 
-This is the canonical source for #mind-theory and terminology. Keep it concise but complete. Do not duplicate in other rules; link here.
+This is the canonical source for `#mind-theory` and terminology. Keep it concise but complete. Do not duplicate in other rules; link here.
 
 ## Notation System (ALWAYS USE)
 
-- #term for ALL definitions and concepts across ALL documentation
+- `#term` for ALL definitions and concepts across ALL documentation (a term MUST start with `#`)
 - == for synonyms/equivalents
 - -> for relationships (loads from, creates, updates, etc.)
-- Use backticks together with hashtagged terms to denote explicit references to concepts (e.g., `#always`, `#mind-theory`).
-- Do not use backticks for plain prose concepts; reserve them for code/paths or hashtagged conceptual references.
+- Use backticks together with hashtagged terms to denote explicit references to concepts (e.g., `#always`, `#mind-theory`). `#always` fix: single non-backticked hashtags SHOULD be converted to backticked ones.
+- Do not use backticks for plain prose; reserve them for code/paths or explicit hashtagged term references.
 
 Example:
 ```markdown
@@ -52,77 +52,114 @@ Example:
 └──────────────────────────────────────────────────┘
 ```
 
-### Principle: No #omniscience
+### Principle: No `#omniscience`
 
-- Agent does NOT have #omniscience; assume you don't know everything
+- Agent does NOT have `#omniscience`; assume you don't know everything
 - Verify yourself; check actions and reasoning
-- Use #progressive-disclosure to retrieve as needed
-- Assume relevant info may still be in #unconscious-context
+- Use `#progressive-disclosure` to retrieve as needed
+- Assume relevant info may still be in `#unconscious-context`
 
 ## Context Types
 
-- #total-context == All layers combined
-  - #conscious-context (active)
-  - #unconscious-context (stored)
-  - #foundational-knowledge (deep)
+- `#total-context` == All layers combined
+  - `#conscious-context` (active)
+  - `#unconscious-context` (stored)
+  - `#foundational-knowledge` (deep)
   - External sources (docs, web, MCP tools)
 
 ## Information Flow
 
-- #message == Single communication unit
-  - #developer-message == User input to agent
-  - #system-prompt == Persistent instructions loaded from `.cursor/rules/`
+- `#message` == Single communication unit
+  - `#developer-message` == User input to agent
+  - `#system-prompt` == Persistent instructions loaded from `.cursor/rules/`
 
-- #instructions == Complete compiled directives for agent
-  - #instructions = #system-prompt + #developer-message + #retrieved-context
-  - #retrieved-context loads from #unconscious-context via #tools
+- `#instructions` == Complete compiled directives for agent
+  - `#instructions` = `#system-prompt` + `#developer-message` + `#retrieved-context`
+  - `#retrieved-context` loads from `#unconscious-context` via `#tools`
 
 ## Roles & Entities
 
-- #developer == Human user (including #forker)
-- #agent == AI assistant
-- #worker == Either #developer or #agent
-- #GitHuber == GitHub visitor (reads MD files)
-- #WebGuest == Visitor of deployed website
-- #forker == Developer who forked repo for their business card
+- `#developer` == Human user (including `#forker`)
+- `#agent` == AI assistant
+- `#worker` == Either `#developer` or `#agent`
+- `#GitHuber` == GitHub visitor (reads MD files)
+- `#WebGuest` == Visitor of deployed website
+- `#forker` == Developer who forked repo for their business card
 
 ## Workflow Cycle (High Level)
 
 | Step | Description | Layer | Artifact | Action |
 |------|-------------|-------|----------|--------|
-| 1 | Input | → Enters | #developer-message | User types |
-| 2 | Retrieval | #unconscious → #conscious | #retrieved-context | Load files/docs |
-| 3 | Assembly | #conscious | #instructions = #system-prompt + #developer-message + #retrieved-context | Compile |
+| 1 | Input | → Enters | `#developer-message` | User types |
+| 2 | Retrieval | `#unconscious` → `#conscious` | `#retrieved-context` | Load files/docs |
+| 3 | Assembly | `#conscious` | `#instructions` = `#system-prompt` + `#developer-message` + `#retrieved-context` | Compile |
 | 4 | Processing | #foundational | - | Think & decide |
-| 5 | Output | #conscious → Output | Code/response | Generate |
-| 6 | Storage | #conscious → #unconscious | Files saved, #runbook | Save work |
-| 7 | Learning | #unconscious | #lesson in `.cursor/lessons/` | Extract |
+| 5 | Output | `#conscious` → Output | Code/response | Generate |
+| 6 | Storage | `#conscious` → `#unconscious` | Files saved, `#runbook` | Save work |
+| 7 | Learning | `#unconscious` | `#lesson` in `.cursor/lessons/` | Extract |
 
-## Critical Reminders for #agent
+## Critical Reminders for `#agent`
 
-1. Always use #notation (no backticks for concepts)
+1. Always use `#notation`; when explicitly referencing a term, prefer backticked hashtag form (e.g., `#term`)
 2. Worker files in `.cursor/` are `.mdc`
-3. Be humble; verify; avoid assuming #omniscience
-4. Use #progressive-disclosure; load incrementally
+3. Be humble; verify; avoid assuming `#omniscience`
+4. Use `#progressive-disclosure`; load incrementally
 5. Follow procedures when they exist
-6. Generate #runbook for significant tasks
-7. Extract #lesson when reusable
+6. Generate `#runbook` for significant tasks
+7. Extract `#lesson` when reusable
 8. Use shortcodes consistently
 9. Prefer TypeScript for scripts (future MCP)
 10. INDEX files are generated (not hand-maintained)
 
 ## Specificity & Alignment
 
-- The #agent must write with high specificity: include exact file paths, procedure names, and links.
+- The `#agent` must write with high specificity: include exact file paths, procedure names, and links.
 - Always interlink artifacts using shortcodes (tasks, procedures, runbooks, lessons) to guide navigation.
-- This #mind-theory is the #developer's in-progress vision; the #agent should ask clarifying questions to fill gaps and align before acting when uncertainty exists.
+- This `#mind-theory` is the `#developer`'s in-progress vision; the `#agent` should ask clarifying questions to fill gaps and align before acting when uncertainty exists.
+
+## Cross-cutting Concepts
+
+- When a recurring idea appears across multiple artifacts, define a new `#term` for it in this dictionary and use it consistently.
+- Prefer concise names, start with `#`, and add synonyms via `==` if helpful.
+
+## Tasking and Execution Terms
+
+- `#shortcode` == lightweight reference notation `[relation:type:identifier]` or `[type:identifier]` used to interlink artifacts
+- `#resolver` == CLI that resolves `#shortcode`s to repository file paths using `#index` data
+- `#index` == generated `INDEX.json` per domain (`#tasks`, `#rules`, `#procedures`, `#lessons`, `#decisions`) listing files and parsed headers
+
+- `#DoR` == Definition of Ready; quality gate that a `#task` must satisfy before `#ready-to-do`
+- `#problem` == concise statement describing what is wrong or missing and for whom
+- `#business-value` == why solving the `#problem` matters (impact/outcome)
+- `#acceptance-criteria` == testable outcomes proving the `#problem` is solved
+- `#scope` == boundaries and constraints; what is in/out
+- `#references` == related artifacts linked via `#shortcode`s
+- `#commit-plan` == high-level commit steps (e.g., Conventional Commits) outlining the implementation path
+- `#placeholders` == generic filler text prohibited in `#tasks` (e.g., "Describe the task...")
+
+- `#status` == lifecycle state of a `#task`; allowed states include `#idea`, `#backlog`, `#ready-to-do`, `#task`, `#wip`, `#done`, `#deferred`
+- `#ready-to-do` == `#status` meaning the `#task` meets `#DoR` and can be started
+- `#wip` == work in progress; task is actively being implemented
+- `#idea` == initial capture before refinement
+- `#refinement` == collaborative process of clarifying `#problem`, `#scope`, and `#acceptance-criteria` before execution
+- `#validation-gate` == requirement to run local and/or CI validation (indexes + task checks) before status transitions or execution
 
 ## Open System Principle
 
-This system evolves. The #agent should:
+This system evolves. The `#agent` should:
 - Suggest improvements to #mind-theory
 - Propose new procedures when patterns emerge
 - Create new #lesson types if needed
 - Expand the dictionary organically
 - Track concepts requiring development in tasks or lessons
+
+## Folder Tags
+
+- `#mind` == `./.cursor` directory
+- `#rules` == `./.cursor/rules/`
+- `#tasks` == `./.cursor/tasks/`
+- `#procedures` == `./.cursor/procedures/`
+- `#runbooks` == `./.cursor/runbooks/`
+- `#lessons` == `./.cursor/lessons/`
+- `#mind-theory` -> lives in `./.cursor/rules/dict.mdc`
 

@@ -1,0 +1,9 @@
+---
+alwaysApply: true
+---
+
+# runbooks
+
+- are located in ./cursor/runbooks/
+- always maintain them 
+- use shortocdes [roonbooks:<task-id>] to reference them or scerits [scripts:roonbooks:<action>] eg index, validate, search:terms etc. 

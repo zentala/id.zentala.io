@@ -1,0 +1,17 @@
+---
+name: "Set up test runner for .cursor/scripts (Vitest/Jest)"
+number: 017
+status: done
+type: test
+created: 2025-10-14
+---
+
+Problem: No automated tests for CLI scripts.
+Business value: Reliability and safe refactors.
+Acceptance criteria:
+- Add dev dependency (Vitest or Jest) and basic config
+- Support tsx without build
+- Document test commands in README/rules
+Scope: Test tooling only; no test cases yet.
+References: [rule:architecture]
+modified: 2025-10-14

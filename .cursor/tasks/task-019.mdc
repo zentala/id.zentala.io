@@ -1,0 +1,15 @@
+---
+name: "Write tests: validate.spec.ts (index shape, placeholders, sections)"
+number: 019
+status: ready-to-do
+type: test
+created: 2025-10-14
+---
+
+Problem: Validator has multiple checks without test coverage.
+Business value: Prevent false positives/negatives and ensure rules enforcement.
+Acceptance criteria:
+- Tests cover: valid indexes, invalid shape, placeholder detection, missing sections
+- Uses temp dirs/files to simulate tasks and indexes
+Scope: Test file next to script: `.cursor/scripts/validate.spec.ts`.
+References: [task:017]

@@ -1,0 +1,16 @@
+---
+name: "Enhance task:new: require --desc and output DoR skeleton"
+number: 016
+status: done
+type: chore
+created: 2025-10-14
+modified: 2025-10-14
+---
+
+Problem: Scaffold allowed placeholders and lacked a required description.
+Business value: Better tasks from the start, less rework.
+Acceptance criteria:
+- `task:new` requires `--desc` and generates sections: Problem, Business value, Acceptance criteria, Scope, References
+- Fails if `--desc` is missing
+Scope: Script change only.
+References: [procedure:task-defining]

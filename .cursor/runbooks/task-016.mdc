@@ -1,0 +1,16 @@
+---
+task: [task:016]
+created: 2025-10-14
+---
+
+# Runbook: Task 016 – Enhance task:new with --desc and DoR skeleton
+
+## Objective
+- Require `--desc` and scaffold DoR sections to prevent placeholders.
+
+## Actions Taken
+- Updated `./.cursor/scripts/new-task.ts` to require `--desc`.
+- Generated body with sections: Problem, Business value, Acceptance criteria, Scope, References.
+
+## Outcome
+- New tasks start compliant with DoR; validator passes when sections are filled.

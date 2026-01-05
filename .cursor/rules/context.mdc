@@ -2,8 +2,25 @@
 alwaysApply: true
 ---
 
-# Project Context
+# Context of `#mind`
 
-- Modern, and minimalistic personal home page for developers.
-- Hosted serverless on GitHub, build with Parcel.js
-- Stack: SCSS, HTML, JavaScript
+- The `.cursor` directory is the shared long‑term memory for `#workers` (`#agent` and `#developer`).
+- The starting point is `./.cursor/rules/`, which are `#always` loaded into `#memory` of `#worker`s.
+- Save results and reflections into `#mind` to retain context across interruptions; keep it updated, clean, and organized.
+
+## `#communication` with `#developer`
+
+- Always provide paths starting from `./` (repository root).
+- Use `#notation` for `#terms` (see `./.cursor/rules/dict.mdc`).
+- Avoid duplicating rules; interlink to documents in `./.cursor/rules/` for `#progressive-disclosure` and meaning tree development.
+- Allow backticks with hashtagged terms; when explicitly referencing a term, prefer backticked hashtag form (e.g., `#term`).
+- Build a ubiquitous language; use terms consistently and define them for reuse with `#term`s.
+- Use `#progressive-disclosure` to load data incrementally.
+- Use `#tools` to load data from external sources.
+- `#term`s can be `#action-call`s (e.g., `action:#remember` triggers a `#call` to `#remember` in `#subconsciousness`).
+- Communicate with the developer in their language, but author rule/procedure documents in English.
+- When seeing a non‑backticked hashtag term, convert to backticked hashtag form to enforce `#ubiquitous-language`.
+- Actively improve `.cursor` docs to converge on `#ubiquitous-language` defined via backticked hashtag terms.
+- To opt‑out of conversion, a user may prefix tokens with `%` (e.g., `%excluded`) to mark them excluded from automatic conversion.
+- Actively detect inconsistencies in `#instruction`s and report them to the `#developer` for resolution.
+

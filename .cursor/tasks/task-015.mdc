@@ -1,0 +1,17 @@
+---
+name: "Enforce validation gate in rules and CI"
+number: 015
+status: done
+type: docs
+created: 2025-10-14
+---
+
+Problem: Validation not enforced before status transitions.
+Business value: Prevents low-quality tasks entering execution.
+Acceptance criteria:
+- Rules specify that `validate:indexes` must pass before moving to `ready-to-do` or `task`
+- Optional CI workflow blocks merge when validation fails
+- Documentation updated in rules and README
+Scope: Rules text + CI workflow.
+References: [procedure:task-defining], [procedure:task-achieving]
+modified: 2025-10-14

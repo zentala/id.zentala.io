@@ -1,0 +1,15 @@
+---
+name: "Establish ADR process and example adr-001.mdc"
+number: 006
+status: backlog
+type: docs
+created: 2025-10-14
+---
+Problem: No clear ADR authoring and indexing process.
+Business value: Traceable architectural decisions with links across artifacts.
+Acceptance criteria:
+- Create `./.cursor/decisions/README.md` with ADR guidelines
+- Provide `adr-001.mdc` example with header and shortcodes
+- Ensure `index:decisions` generates `INDEX.json`
+Scope: Docs + example ADR.
+References: [rule:architecture], [rule:mcp-future]

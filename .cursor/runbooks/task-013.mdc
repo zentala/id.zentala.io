@@ -1,0 +1,29 @@
+---
+task: [task:013]
+created: 2025-10-14
+---
+
+# Runbook: Task 013 – Translate and clean rules/context; align notation policy
+
+## Objective
+- Make `rules/context.mdc` clear in English and align notation policy.
+
+## Context Loaded
+- Rules: `./.cursor/rules/dict.mdc`, `./.cursor/rules/context.mdc`, `./.cursor/rules/tasks.mdc`, `./.cursor/rules/mcp-future.mdc`
+- Scripts: `./.cursor/scripts/index.ts`, `./.cursor/scripts/new-task.ts`
+
+## Thought Process
+- Unify policy to allow `#term` with backticks for explicit references.
+- Keep prose free of backticks unless explicitly referencing a term.
+
+## Actions Taken
+- Edited `dict.mdc` to clarify backtick policy and reminders.
+- Translated and cleaned `context.mdc`; removed contradictions and typos.
+- Updated `tasks.mdc` and `mcp-future.mdc` where relevant.
+
+## Outcome
+- Rules are consistent with agreed policy; context is readable.
+
+## Related
+- [task:010]
+- [task:011]

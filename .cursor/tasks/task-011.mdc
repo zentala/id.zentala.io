@@ -1,0 +1,13 @@
+---
+name: "Add types for index and task headers; outline validation"
+number: 011
+status: ready-to-do
+type: docs
+created: 2025-10-14
+---
+
+- Create `./.cursor/types/index.types.ts` with `IndexJson`, `IndexEntry`, `IndexKind`, `TaskHeader`.
+- Document runtime validation approach in `./.cursor/rules/mcp-future.mdc` (no CI yet).
+- Acceptance: types exist; rules point to types; scripts align to types.
+
+Refs: [procedure:task-defining], [procedure:task-achieving]

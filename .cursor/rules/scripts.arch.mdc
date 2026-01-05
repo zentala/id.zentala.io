@@ -1,0 +1,52 @@
+---
+alwaysApply: false
+---
+
+# Scripts Architecture – Current Design and Vision
+
+## Current State
+
+- We use TypeScript CLIs under `./.cursor/scripts/` executed via `tsx`.
+- Indexing, validation, resolving shortcodes, and term search are separate CLIs.
+- `#resolver` resolves `#shortcode`s to file paths using generated `#index` data.
+- `#router` provides a single entry to invoke scripts by `[script:*]` shortcode with JSON/base64/STDIN payloads.
+- Tests are set up with Vitest, colocated next to CLIs (`*.spec.ts`).
+- CI runs indexing, validation, and tests on PRs/commits to `main`.
+
+See also: `./.cursor/rules/scripts.mdc` for the script catalog and payload spec.
+
+## Why This Design (Now)
+
+- Simplicity and speed: TS + tsx gives zero-build CLIs that are easy to evolve.
+- Explicit contracts: `INDEX.json` schema + DoR validation keep content consistent.
+- Agent-friendly API: `[script:*]` shortcode + JSON payload is stable for LLMs and CLIs.
+- Modularity: independent scripts (index/validate/resolve/search) with a unified router facade.
+
+## Alternatives Considered
+
+- Direct MCP tools now:
+  - Pros: unified protocol, future-proof
+  - Cons: higher upfront complexity; we first need stable schemas/flows
+- Single mega-CLI with subcommands (without router):
+  - Pros: one binary
+  - Cons: less LLM-friendly without a clear shortcode spec; tighter coupling
+- YAML payloads instead of JSON/base64:
+  - Pros: human-friendly
+  - Cons: more parsing variance; JSON is simpler for programmatic use
+
+## Migration Vision
+
+- Phase 1 (now): TypeScript CLIs + `[script:*]` payload spec + router.
+- Phase 2: Introduce MCP tools mirroring the same contracts (resolver, index, validate, search).
+- Phase 3: Deprecate router in favor of MCP once stability and coverage are adequate.
+
+## Trade-offs and Risks
+
+- Duplication of logic between router and individual scripts—managed via small adapters.
+- Payload encoding/escaping complexity—mitigated by base64 and STDIN options.
+- Keeping `INDEX.json` in sync—addressed by CI and `index:all` convention.
+
+## Links
+
+- Scripts Catalog and Payload Spec: `./.cursor/rules/scripts.mdc`
+- Dictionary (`#terms`): `./.cursor/rules/dict.mdc`

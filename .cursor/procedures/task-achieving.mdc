@@ -7,6 +7,18 @@ alwaysApply: false
 
 Follow these steps whenever executing a task.
 
+## Gate: Definition of Ready Check
+
+Before starting, verify the task meets the DoR defined in `./.cursor/rules/tasks.mdc`:
+
+- Clear problem statement and business value
+- Concrete acceptance criteria
+- Scope boundaries and dependencies
+- References to related artifacts
+- Commit plan or high-level steps
+
+If any item is missing or the body contains placeholders, STOP and move the task back to `backlog` with notes.
+
 1. Load task from `.cursor/tasks/task-NNN.mdc`.
 2. Retrieve necessary context (files, rules, lessons) via #progressive-disclosure.
 3. Perform the work (code/changes) guided by relevant rules.
@@ -73,7 +85,7 @@ created: YYYY-MM-DD
 
 ## Runbooks Policy
 
-- Runbook jest wymagany dla KAŻDEGO zadania, także dla prac konfiguracyjnych i porządkowych.
+- Runbook is required for significant tasks; trivial chores may omit it but must still update the task status and key notes.
 
 ## Post-Execution Reconciliation (Task Updates)
 

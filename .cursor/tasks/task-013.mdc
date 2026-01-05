@@ -1,0 +1,14 @@
+---
+name: "Translate and clean rules/context; align notation policy"
+number: 013
+status: done
+type: docs
+created: 2025-10-14
+modified: 2025-10-14
+---
+
+- Translate `./.cursor/rules/context.mdc` to clear English.
+- Align with notation policy: allow backticked `#term` references.
+- Acceptance: rules are consistent and clear.
+
+Runbook: `./.cursor/runbooks/task-013.mdc`

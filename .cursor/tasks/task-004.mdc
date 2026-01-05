@@ -1,0 +1,15 @@
+---
+name: "Add TS types for MDC headers (tasks/rules/procedures/lessons)"
+number: 004
+status: backlog
+type: chore
+created: 2025-10-14
+---
+Problem: Lack of shared types for headers and indexes.
+Business value: Safer scripts and future MCP tooling.
+Acceptance criteria:
+- `./.cursor/types/index.types.ts` defines `IndexJson`, `IndexEntry`, `IndexKind`, `TaskHeader`
+- Scripts compile against these shapes
+- Rules reference the location of the types
+Scope: Types only; no runtime schema validation.
+References: [rule:mcp-future]

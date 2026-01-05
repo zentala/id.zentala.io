@@ -1,0 +1,17 @@
+---
+name: "Implement shortcode resolver CLI (resolve --kind --id)"
+number: 014
+status: done
+type: chore
+created: 2025-10-14
+---
+
+Problem: No way to resolve `[kind:id]` shortcodes to file paths.
+Business value: Faster navigation and tooling.
+Acceptance criteria:
+- `./.cursor/scripts/resolve.ts` supports: `--kind rules|tasks|procedures|lessons|decisions --id <identifier>`
+- Prints absolute/relative path(s) resolved from index
+- Handles both numeric task ids (e.g., `task:010`) and names where applicable
+Scope: CLI only; no editor integration.
+References: [rule:tasks], [rule:mcp-future]
+modified: 2025-10-14

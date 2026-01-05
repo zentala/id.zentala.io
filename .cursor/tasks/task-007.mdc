@@ -1,0 +1,15 @@
+---
+name: "Add templates: task, runbook, lesson (copyable blocks)"
+number: 007
+status: backlog
+type: docs
+created: 2025-10-14
+---
+Problem: Missing copyable templates increases friction and inconsistency.
+Business value: Faster authoring, fewer format errors.
+Acceptance criteria:
+- Provide Markdown blocks in `./.cursor/content/` for task/runbook/lesson templates
+- Reference templates from `rules/tasks.mdc` and `procedures/*`
+- Ensure templates reflect DoR and runbook structure
+Scope: Documentation and content blocks only.
+References: [procedure:task-defining], [procedure:task-achieving]

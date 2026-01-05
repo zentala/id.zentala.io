@@ -1,0 +1,15 @@
+---
+name: "Add validator: index:check and CI workflow"
+number: 008
+status: backlog
+type: chore
+created: 2025-10-14
+---
+Problem: Risk of shape drift in index files and placeholder tasks.
+Business value: Early failure and cleaner repo state.
+Acceptance criteria:
+- `./.cursor/scripts/validate.ts` validates index shape and blocks placeholders
+- `package.json` exposes `validate:indexes`
+- Optional CI runs validation on PRs
+Scope: Script + package script, CI optional.
+References: [rule:mcp-future]

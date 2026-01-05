@@ -1,0 +1,15 @@
+---
+name: "Add CI job to run index:all and validate headers"
+number: 005
+status: backlog
+type: chore
+created: 2025-10-14
+---
+Problem: No automated guard for indexes and placeholders.
+Business value: Prevent broken indexes and placeholder tasks in main.
+Acceptance criteria:
+- CI workflow runs `index:all` and `validate:indexes`
+- CI fails on invalid index shape or placeholder tasks
+- Docs added to `README.md` or rules
+Scope: Add basic GitHub Actions workflow.
+References: [procedure:task-achieving]

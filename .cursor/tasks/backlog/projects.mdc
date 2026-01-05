@@ -1,0 +1,6 @@
+scope tasks into projects, so one project can have multiple tasks
+
+projects/INDEX.json
+projects/000-<name>/README.mdc - project desc, goals, purpose
+projects/000-<name>/tasks/INDEX.json
+projects/000-<name>/tasks/000-<name>.mdc

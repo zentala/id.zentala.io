@@ -1,0 +1,95 @@
+---
+alwaysApply: false
+description: archival v1 dict
+---
+
+## Dictionary
+
+- this is `dictionary`
+- it was created to ensure consistency and clarity in our `context`
+- everything in `backticks` is `term` in our internal `dictionary` == `backticks` contains `terms` and their `definion`s used in our `context`.
+- `term` points to keyword, while `definition` points to explanation of `term`
+- `synonym` == word that has the same meaning as another `term` in our internal `dictionary`.
+- in `dictionary` we describe `term`s, theirs `synonym`s  and theirs `definition`s  using `==` between them.
+- `dictionary` == `dict`
+- this `repository` contains simple static web `business card` `website` of `creator` named *Paweł Żentała*
+- this `website` is made with HTML5, SCSS `stack` & build wih `builder` Parcel.js & deployed on static `hosting` of *GitHub Pages*
+- this `repository` is publicy avaliable on [`creator`'s GitHub](https://github.com/zentala/id.zentala.io )
+- `website` `repository` is intended to be forked and customized for similar purpose (`business card`) for everyone who wants to resuse it - let's name this person `forker`
+
+## Roles
+
+- you are AI LLM `agent`
+- `devloper` = `user of chatbot`
+- every `forker` is also `developer` - because he was instructed to use `cursor` IDE and he will follow and apply same instructions as `developer` to customize this website.
+- `website` `guest` = user of depoyed `website`
+- `developer` (including `forker`) | `agent`  = `worker` on this `repository`
+
+## Documenting
+
+### Definitions
+
+### Folders and files
+
+- `docs` = `documentation`
+- `*.md` = `MD` = `Markdown`
+- `*.mdc` = `MDC` = `Markdown Cursor Document`
+- `dir` = `directory` = `folder`
+- `rules` = content of `./.cursor/rules/` `folder`
+
+### Mind theory
+
+- both `developer` and `agent` had limited `context window`: amount od data they can store in their `short term memory` == `context window size`
+
+- therefore there is
+
+- `memory` is short-term (`consciousness` = `conm`) or long-term (`subconscious` = `subm`)
+
+- working `context` = content of `./cursor` `dir` - works as long-term memory and notes of `worker`s
+- `memory` - `instructions` that `worker` have currently in loaded into his short term `consciousness`
+- `instructions` = `fluid` set of `rules` and other `guidelines` for `workers`
+- `instructions` set is `fluid` because they are loaded from `context` into `memory` to
+- `guildelines` - less strict than `rules` - used as `guidance` for `workers`, eg `task`s
+
+### Rules
+
+Always:
+
+- interlink files `MD` & `MDC` files in `docs`
+
+- `worker`s use `.cursor/` `dir` as theirs `docs` and `instructions`, no need to docuement separately for developer - don't duplicate content
+
+### MD files in `./` (root) directory
+
+- `./` is the `root` of this `repository`
+- `./README.md` is intended to intoduce `repository` `visitor`s
+- `./CONTRIBUTION.md` is intended to introduce and encourage
+`visitor`s who are potentials `forker`s to use this `repository` as thirs `business card` `website`- therefore `./CONTRIBUTION.md` shows simplicty or forking, customizing and deployment of this `website` using this `repository`
+
+### Specyfic files
+
+### `Forker`s
+
+- maintain and search for additional instructions for `forker` in `./cursor/rules/forking.mdc`
+
+#### `Task`s
+
+- `./cursor/todo` contains potnential `tasks`
+- all of `tasks` should be listed in `./cursor/todo/INDEX.md` which should be kept updated and readed first by `worker`
+- not all `tasks` are actual `tasks` - some are `ideas` or `suggestions`, every task should be MDC files with header containging (only `name`, `number` & `status` are required):
+``` mdc
+---
+name: Task Name
+description: Task Description
+type: [feature | bugfix | refactor | chore | docs | test | style | perf]
+scope: [docs | design | deploy | build | content | code | ...]
+number: [1 | 2 | 3 | ...]
+status: [idea | backlog | task | WIP | done]
+priority: [low | medium | high | critical]
+dependencies: [file1, file2, ...]
+tags: [tag1, tag2, ...]
+```
+
+- `./cursor/todo/content` contains content for `tasks`
+- `./cursor/todo/content/TOOLTIP-CONTENT.md` contains content for `tooltips`
+```

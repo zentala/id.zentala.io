@@ -1,0 +1,14 @@
+---
+name: "Finalize JSON index spec and document in rules"
+number: 010
+status: ready-to-do
+type: docs
+created: 2025-10-14
+---
+
+- Define canonical `INDEX.json` format across `.cursor/*`.
+- Ensure `./.cursor/scripts/index.ts` includes `kind` and stable shape.
+- Document spec in `./.cursor/rules/mcp-future.mdc` and reference in `./.cursor/rules/tasks.mdc`.
+- Acceptance: regenerated indexes match the documented schema.
+
+Refs: [procedure:task-defining], [procedure:task-achieving]

@@ -1,0 +1,105 @@
+---
+description: Catalog of scripts (CLI) and shortcode convention
+alwaysApply: true
+---
+
+
+# Scripts Catalog (`#scripts`)
+
+Use these CLIs for repository automation. Reference them via `#shortcode`s to avoid hardcoding paths.
+
+## Rules
+
+every node scipt mist be coverd with tests
+
+## Shortcode Convention
+
+- `[script:index:<kind>]` – run index generator for a specific kind or all
+- `[script:resolve]` – resolve `#shortcode` to file path(s)
+- `[script:validate]` – validate indexes and tasks (DoR/placeholder checks)
+- `[script:search:terms]` – search usages of `#term`s across the repo or selected kinds
+
+## Mapping
+
+- `[script:index:<kind>]` -> `npm run index:<kind>` (kinds: `tasks|rules|procedures|lessons|decisions|all`)
+- `[script:resolve]` -> `npm run resolve -- --kind <kind> --id <identifier>` or positional `npm run resolve -- <kind> <identifier>`
+- `[script:validate]` -> `npm run validate:indexes`
+- `[script:search:terms]` -> `npm run search:terms -- --terms "#term1,#term2" --kinds "rules,tasks"`
+  - Options: `--regex` (treat terms as patterns), `--ignore "**/backlog/**,**/node_modules/**"`
+
+## Examples
+
+- Resolve task 010: `npm run resolve -- tasks 010`
+- Resolve rules by name: `npm run resolve -- --kind rules --id mcp-future`
+- Search for `#DoR` and `#validation-gate` in rules and procedures:
+  - `npm run search:terms -- --terms "#DoR,#validation-gate" --kinds "rules,procedures"`
+  - With regex and ignore: `npm run search:terms -- --terms "#DoR|#validation-gate" --kinds "rules,procedures" --regex --ignore "**/backlog/**"`
+
+## Script Shortcode Payload Spec (`#router`)
+
+Standard way for the `#agent` to request a script with embedded parameters.
+
+- General form: `[script:<command>[:<subcommand>[:<kind>]]]` followed by a JSON payload
+  - Inline JSON: `[script:resolve]{"kind":"tasks","id":"010"}`
+  - Or send the JSON via CLI flags: `--payload '{"kind":"tasks","id":"010"}'`
+  - Or base64 payload: `[script:resolve|b64] eyJraW5kIjoidGFza3MiLCJpZCI6IjAxMCJ9`
+  - Or STDIN JSON: pass JSON on stdin and set `--stdin`
+
+Router invocation:
+- `npm run route -- --shortcode "[script:resolve]" --payload '{"kind":"tasks","id":"010"}'`
+- `npm run route -- --shortcode "[script:search:terms]" --payload '{"terms":"#DoR,#validation-gate","kinds":"rules,procedures"}'`
+
+Notes:
+- JSON fields accept long strings (escaped). For multi-line text, prefer base64 payload or STDIN.
+- The router translates shortcode+payload to the appropriate CLI call (e.g., resolve, search, index, validate).
+
+## Shortcode Language v1 (SCL-1)
+
+Authoritative, minimal spec for script shortcodes to reduce ambiguity and errors.
+
+### Grammar
+
+- Form: `[script:<command>[:<subcommand>[:<kind>]] [|b64] [|v=1]]` plus one payload channel (choose one):
+  - Inline JSON immediately after the shortcode: `[script:<...>]{"k":"v"}`
+  - CLI flag: `--payload '{"k":"v"}'`
+  - Base64 payload modifier: `[script:<...>|b64] <base64-json>` (passed via `--payload`)
+  - STDIN JSON: `--stdin` and pipe JSON to process stdin
+
+Constraints:
+- `<command>` and `<subcommand>`: `a-z0-9:-` (lowercase kebab; colon separates levels)
+- `<kind>` (optional): one of `tasks|rules|procedures|lessons|decisions|all`
+- Version default is `v=1` (SCL-1). Include `|v=1` for clarity if needed.
+
+### Allowed Commands (SCL-1)
+
+- `resolve` – payload: `{ kind: string, id: string }` (required fields)
+- `search:terms` – payload: `{ terms: string, kinds?: string }` (comma lists)
+- `index` – payload: `{ kind?: 'tasks'|'rules'|'procedures'|'lessons'|'decisions'|'all' }`
+- `validate` – payload: `{}` (no fields)
+
+### Error Model
+
+Structured errors to minimize confusion (router should emit both code and message):
+
+- `SCL001 ERR_UNKNOWN_COMMAND` – unknown `command/subcommand`
+- `SCL002 ERR_UNSUPPORTED_KIND` – `<kind>` not in allowed set
+- `SCL003 ERR_MISSING_FIELD` – required payload field missing
+- `SCL004 ERR_INVALID_PAYLOAD` – invalid JSON / base64 / stdin content
+- `SCL005 ERR_VERSION_MISMATCH` – unsupported `|v=`
+
+Recommended format:
+```json
+{ "error": { "code": "SCL003", "message": "missing field: id" } }
+```
+
+### Best Practices
+
+- Prefer flag payload for simple one-liners; use base64 or STDIN for multi-line/long JSON.
+- Keep commands stable; add new capabilities behind subcommands (e.g., `search:terms`).
+- Validate early (lint) before execution.
+
+### Linting (Planned)
+
+- CLI: `lint-shortcodes` scans `.mdc` files, extracts `[script:...]`, validates per SCL-1, and reports SCL errors.
+- Exit non-zero on any SCL error to block CI.
+
