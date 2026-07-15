@@ -1,4 +1,4 @@
-# id.zentala.pl [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/zentala/id.zentala.pl) [![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/emersion/stability-badges#stable)
+# id.zentala.eu [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/zentala/id.zentala.eu) [![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://github.com/emersion/stability-badges#stable)
 
 ## 🌍 Overview
 Modern, minimalistic, one-page, simple in every way developer personal home page. 
@@ -18,7 +18,7 @@ Feel free to fork it for yourself and use for your needs!
 
 ![Design animated preview](preview.gif "Design animated preview")
 
-Check out live example: https://id.zentala.pl/
+Check out live example: https://id.zentala.eu/
 
 ## 📊 Code quality status
 
@@ -69,8 +69,8 @@ Just click `Gitpod` button above.
 ## 💻 Local development
 ### Setup
 ```
-$ git clone git@github.com:zentala/id.zentala.pl.git
-$ cd id.zentala.pl
+$ git clone git@github.com:zentala/id.zentala.eu.git
+$ cd id.zentala.eu
 $ nvm use .
 $ npm install
 ```

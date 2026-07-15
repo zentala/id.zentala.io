@@ -1,4 +1,4 @@
-name = "id-zentala-pl"
+name = "id-zentala-eu"
 compatibility_date = "2026-07-01"
 account_id = "84c3ee9acdac8503a8bbcfd0edb39877"
 
@@ -6,7 +6,7 @@ account_id = "84c3ee9acdac8503a8bbcfd0edb39877"
 # after a table header belongs to that table, so placing it below silently makes
 # it `assets.routes` and wrangler ignores the routing entirely.
 routes = [
-  { pattern = "id.zentala.pl", custom_domain = true }
+  { pattern = "id.zentala.eu", custom_domain = true }
 ]
 
 # Static-assets-only Worker (no `main`): Cloudflare serves ./deploy directly.
