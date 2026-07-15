@@ -1,5 +1,5 @@
 {
-  "name": "id.zentala.io",
+  "name": "id.zentala.pl",
   "version": "2.0.0",
   "license": "MIT",
   "private": true,
@@ -12,11 +12,9 @@
   ],
   "scripts": {
     "dev": "parcel serve src/index.html --port 2000 --dist-dir deploy",
-    "deploy": "npm run deploy:clean && npm run deploy:build && npm run deploy:setup && npm run deploy:push",
-    "deploy:clean": "rimraf deploy",
-    "deploy:setup": "echo id.zentala.io >> deploy/CNAME",
-    "deploy:build": "parcel build src/index.html --dist-dir deploy",
-    "deploy:push": "gh-pages -d deploy -b deploy"
+    "build": "npm run build:clean && parcel build src/index.html --dist-dir deploy --public-url /",
+    "build:clean": "rimraf deploy .parcel-cache",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@fontsource/montserrat": "^4.3.0",
@@ -32,10 +30,10 @@
     "@parcel/packager-raw-url": "^2.16.0",
     "@parcel/transformer-sass": "^2.16.0",
     "@parcel/transformer-webmanifest": "^2.16.0",
-    "gh-pages": "^6.1.1",
     "parcel": "^2.12.0",
     "rimraf": "^6.0.1",
-    "sass": "^1.79.5"
+    "sass": "^1.79.5",
+    "wrangler": "^4.42.0"
   },
   "browserslist": [
     "defaults",
